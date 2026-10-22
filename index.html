@@ -130,6 +130,25 @@ section{padding:96px 0;position:relative}
 .cd small{color:var(--mute);display:block}
 .langs{margin-top:30px;display:flex;gap:8px;flex-wrap:wrap}
 .langs span{border:1px solid var(--line);border-radius:30px;padding:5px 14px;font-size:14px;color:var(--mute)}
+/* freshers */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0 36px;margin-bottom:40px}
+.rules div{border-top:2px solid var(--a);padding:14px 0}
+.rules b{display:block;font:600 20px "Bricolage Grotesque",sans-serif;margin-bottom:4px}
+.rules span{color:var(--mute);font-size:15px}
+.pj{border-bottom:1px solid var(--line)}
+.pj>button{width:100%;display:flex;gap:14px;align-items:center;justify-content:space-between;text-align:left;background:none;border:0;color:var(--ink);padding:20px 0;cursor:pointer;font:600 clamp(20px,2.6vw,28px)/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.015em}
+.pj>button::after{content:"+";font-size:28px;color:var(--a);transition:transform .3s;flex:none}
+.pj.open>button::after{transform:rotate(45deg)}
+.pj .mt{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto;font:500 13px "DM Sans",sans-serif}
+.pj .mt i{font-style:normal;border:1px solid var(--line);border-radius:30px;padding:3px 11px;color:var(--mute);white-space:nowrap}
+.pj .mt i.ar{background:var(--soft);color:var(--ink)}
+.pj .pn{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s}
+.pj.open .pn{grid-template-rows:1fr}
+.pj .pn>div{overflow:hidden}
+.pj dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px 30px;margin:0;padding:0 0 26px}
+.pj dt{font-weight:600;color:var(--g);font-size:14px;margin-bottom:3px}
+.pj dd{margin:0;color:var(--mute);font-size:16px}
+@media(max-width:700px){.pj>button{flex-wrap:wrap}.pj .mt{margin-left:0;order:3;width:100%}}
 /* contact */
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
@@ -163,7 +182,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
+<nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#intern">Freshers</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero" id="top">
 <canvas id="net" aria-hidden="true"></canvas>
@@ -242,6 +261,14 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <div class="cr" id="crg"></div>
 <div class="langs" id="lang"></div>
 <p style="color:var(--mute);margin-top:22px">Outside work: reading, playing guitar and driving.</p>
+</div></section>
+
+<section id="intern" class="alt"><div class="wrap">
+<h2 class="h2">Project ideas for freshers and interns.</h2>
+<p class="sub">Practical L&amp;D and OD projects you can finish in weeks, each with a clear place for AI and a clear role for you.</p>
+<div class="rules"><div><b>Protect data</b><span>Keep employee and company data out of public AI tools. Use approved tools or anonymised samples.</span></div><div><b>Verify everything</b><span>AI drafts, you check. Always confirm facts and numbers with an expert.</span></div><div><b>Show the outcome</b><span>Finish with a one-page story: the problem, what you built, and what changed.</span></div></div>
+<div class="tabs" id="ptabs"></div>
+<div class="pjl" id="pjl"></div>
 </div></section>
 
 <section class="ct" id="contact"><div class="wrap">
@@ -343,6 +370,11 @@ function lib(){var g=$("libg");g.innerHTML="";L.filter(function(x){return lf==="
 /* credentials */
 [["2019","SPHRi","Senior Professional in Human Resources, International","HRCI, USA. Distinction (75%)"],["2016","Certified ADDIE Content Developer","Also Certified Train the Trainer, 2015–16","FMC University, Singapore"],["2021","Managing Human Resources","80.41%","University of Minnesota via Coursera"],["2005","B.E. Mechanical Engineering","67%","Anna University, Kings Engineering College"],["2020","Adobe Captivate","e-Learning authoring","Udemy"],["2011","Balanced Scorecard","Strategy and performance","NHRD, Nagpur"],["2016","Train-the-Trainer","Facilitation skills","Fourth Dimension, Mumbai"],["2016–17","Business, HRD and People Management","Four programs including Organizational Learning","FMC University, Singapore"]].forEach(function(c){$("crg").appendChild(mk("div","cd","<div class='y'>"+c[0]+"</div><div><h3>"+c[1]+"</h3><div>"+c[2]+"</div><small>"+c[3]+"</small></div>"))});
 ["English, fluent","Tamil, fluent","Hindi, intermediate","Malayalam, intermediate"].forEach(function(l){$("lang").appendChild(mk("span","",l))});
+/* freshers */
+var PJ=[["L&D","AI-assisted learning needs analysis","Beginner","2 weeks","Take anonymised survey comments, feedback forms and manager inputs and turn them into a ranked list of skill gaps by team.","Use an AI assistant to cluster comments into themes and draft summaries. You check every theme against the raw data.","A spreadsheet, an approved AI assistant, a simple heat map","A one-page gap heat map with three recommended programs"],["L&D","Microlearning factory","Beginner","2 to 3 weeks","Convert one SOP, policy or process into five short modules of under five minutes, each with a three-question quiz.","AI drafts scripts, quiz questions and visuals. A subject-matter expert signs off on accuracy.","An AI assistant, Canva, Adobe Captivate or any slide tool","A working five-module pack with a facilitator note"],["L&D","AI role-play coach","Intermediate","3 to 4 weeks","Write three realistic scenarios, such as giving feedback or handling a customer complaint, and a scoring rubric for each.","Prompt an AI to play the other person so learners can practise safely, then score the conversation against your rubric.","An AI chat tool, a rubric template, a small pilot group","Three scenarios, the prompts, the rubric and pilot results"],["L&D","Personalised learning path finder","Intermediate","3 to 4 weeks","Tag a course library by skill, role and level, then build simple rules that suggest the next best course.","AI helps tag content and spot duplicates. The recommendation logic stays transparent and explainable.","Google Sheets or Excel, a no-code tool such as Notion or Airtable","A skill taxonomy and a clickable prototype"],["L&D","New joiner question assistant","Intermediate","3 weeks","Collect the questions new joiners ask most and build an assistant that answers them from approved documents only.","Use a company-approved AI tool grounded in your documents. Test accuracy and list what it must never answer.","An approved enterprise AI tool, a document set, a test sheet","A tested FAQ assistant with an accuracy report"],["L&D","Training impact dashboard","Intermediate","3 weeks","Combine attendance, assessment scores and feedback into one view that follows the four Kirkpatrick levels.","AI writes plain-language insights and flags unusual patterns. You decide which actions matter.","Power BI, Looker Studio or Sheets, an AI assistant","A one-minute dashboard and a short insights note"],["L&D","AI literacy workshop","Beginner","2 weeks","Design a 90-minute session on safe prompting, checking AI output, and role-specific uses for sales, HR, operations and finance.","Use AI to generate examples per function, then edit them to fit your company.","A slide tool, a prompt cheat sheet template","A facilitator guide, slides and a one-page cheat sheet"],["OD","Pulse survey theme analyser","Beginner","2 weeks","Analyse open-text answers from an engagement survey and turn them into themes and three suggested actions.","AI groups comments and detects sentiment. You protect anonymity and never expose individuals.","A spreadsheet, an approved AI assistant","A themes summary and an action plan for leaders"],["OD","AI skills inventory","Intermediate","3 weeks","Survey how comfortable each function is with AI, map the gaps and identify early champions.","AI helps design survey questions and summarise results. You validate with managers.","A survey form, Sheets or Power BI","A skills map by function and an upskilling plan"],["OD","Workflow quick-win audit","Intermediate","3 to 4 weeks","Map a team’s repeated tasks, score them by effort and benefit, and propose three improvements that save time.","AI helps document steps and suggests automations. You estimate hours saved with the team.","Process maps, a scoring matrix, an AI assistant","A ranked list of quick wins with estimated hours saved"],["OD","Change kit for an AI tool rollout","Advanced","4 weeks","Create a stakeholder map, communication plan, FAQ, and a way to handle resistance for a new AI tool.","AI drafts messages and FAQs for different audiences. You tailor tone and test with real people.","The ADKAR model, a comms calendar, an AI assistant","A ready-to-use change kit and adoption metrics"],["OD","Competency framework refresh","Advanced","4 to 5 weeks","Update an existing competency framework with AI fluency, data thinking and adaptability for two key roles.","AI drafts behavioral indicators. Managers and top performers validate every line.","An existing framework, interviews, a scoring rubric","A refreshed framework for two roles, validated with managers"],["OD","Responsible AI guide","Intermediate","3 weeks","Draft a plain-language guide on data privacy, bias, approvals and what not to put into public AI tools.","AI helps compare policies from other organizations. HR, IT and legal review the final text.","Policy examples, a review checklist","A two-page guide and a short awareness session"]],pf="All";
+["All","L&D","OD"].forEach(function(t){var b=mk("button","tab",t==="All"?"All projects":t==="L&D"?"Learning and development":"Organization development");b.setAttribute("aria-pressed",t==="All");b.onclick=function(){pf=t;document.querySelectorAll("#ptabs .tab").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");pjr()};$("ptabs").appendChild(b)});
+function pjr(){var g=$("pjl");g.innerHTML="";PJ.filter(function(x){return pf==="All"||x[0]===pf}).forEach(function(x){var d=mk("div","pj","<button type='button' aria-expanded='false'><span>"+x[1]+"</span><span class='mt'><i class='ar'>"+(x[0]==="L&D"?"L&amp;D":"OD")+"</i><i>"+x[2]+"</i><i>"+x[3]+"</i></span></button><div class='pn'><div><dl><div><dt>What you build</dt><dd>"+x[4]+"</dd></div><div><dt>Where AI helps</dt><dd>"+x[5]+"</dd></div><div><dt>Tools to try</dt><dd>"+x[6]+"</dd></div><div><dt>Show it as</dt><dd>"+x[7]+"</dd></div></dl></div></div>");
+var b=d.firstChild;b.onclick=function(){var o=d.classList.toggle("open");b.setAttribute("aria-expanded",o)};g.appendChild(d)})}pjr();
 /* contact: details are assembled on click, never written into the page */
 var P={m:function(){return"mailto:"+["sundarnesakumar","gmail.com"].join(String.fromCharCode(64))},
 l:function(){return["https:","","www.linkedin.com","in","nathaniel-pon-sundarji-bb0695a"].join("/")},
