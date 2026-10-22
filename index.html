@@ -154,6 +154,7 @@ section{padding:96px 0;position:relative}
 @media(max-width:700px){.pj>button{flex-wrap:wrap}.pj .mt{margin-left:0;order:3;width:100%}}
 .gd{margin-top:44px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .gd p{margin:0;font:600 clamp(22px,2.8vw,30px)/1.2 "Bricolage Grotesque",sans-serif;letter-spacing:-.015em;max-width:30ch}
+#vc{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(10px,env(safe-area-inset-bottom));z-index:20;font:500 11px "DM Sans",sans-serif;color:var(--mute);opacity:.75;background:var(--nav);border:1px solid var(--line);border-radius:20px;padding:2px 10px;pointer-events:none}
 /* contact */
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
@@ -288,6 +289,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </div>
 <button class="btn" id="shr" type="button">Share this portfolio</button>
 </div></section>
+<div id="vc" aria-label="Total page views" hidden></div>
 <footer><div class="wrap">© Nathaniel P. Nesakumar. SPHRi certified.</div></footer>
 <noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view the full portfolio.</p></noscript>
 
@@ -380,7 +382,7 @@ var TL={All:"All projects","L&D":"Learning and development",OD:"Organization dev
 function pjr(){var g=$("pjl");g.innerHTML="";PJ.filter(function(x){return pf==="All"||x[0]===pf}).forEach(function(x){var d=mk("div","pj","<button type='button' aria-expanded='false'><span>"+x[1]+"</span><span class='mt'><i class='ar'>"+TG[x[0]]+"</i><i>"+x[2]+"</i><i>"+x[3]+"</i></span></button><div class='pn'><div><dl><div><dt>What you build</dt><dd>"+x[4]+"</dd></div><div><dt>Where AI helps</dt><dd>"+x[5]+"</dd></div><div><dt>Tools to try</dt><dd>"+x[6]+"</dd></div><div><dt>Show it as</dt><dd>"+x[7]+"</dd></div></dl></div></div>");
 var b=d.firstChild;b.onclick=function(){var o=d.classList.toggle("open");b.setAttribute("aria-expanded",o)};g.appendChild(d)})}pjr();
 /* contact: details are assembled on click, never written into the page */
-var P={m:function(){return"mailto:"+["sundarnesakumar","gmail.com"].join(String.fromCharCode(64))},
+var P={m:function(){var a=["sundarnesakumar","gmail.com"].join(String.fromCharCode(64));return"mailto:"+a+"?subject="+encodeURIComponent("Contacting you via your portfolio")+"&body="+encodeURIComponent("Hello Nathaniel,\n\nI am contacting you via your portfolio.\n\n[Write your message here]\n\nRegards,\n")},
 l:function(){return["https:","","www.linkedin.com","in","nathaniel-pon-sundarji-bb0695a"].join("/")},
 y:function(){return["https:","","youtube.com","@nathanielpnesakumar9624"].join("/")},
 c:function(){return["https:","","curiasity.com","instructorDetails","18","NBTC"].join("/")},
@@ -388,7 +390,8 @@ w:function(){return"https://wa.me/"+["91","9043","010788"].join("")}};
 document.querySelectorAll(".ic button").forEach(function(b){b.onclick=function(){var u=P[b.dataset.k]();if(b.dataset.k==="m")location.href=u;else window.open(u,"_blank","noopener")}});
 $("shr").onclick=function(){var d={title:document.title,url:location.href};if(navigator.share)navigator.share(d).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(d.url);$("shr").textContent="Link copied"}};
 /* visitor analytics: paste your GoatCounter code (the part before .goatcounter.com) between the quotes */
-var GC="";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g)}
+var GC="";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g);
+fetch("https://"+GC+".goatcounter.com/counter/TOTAL.json").then(function(r){return r.json()}).then(function(d){var v=$("vc");if(d&&d.count){v.textContent=d.count+" views";v.hidden=false}}).catch(function(){})}
 </script>
 </body>
 </html>
