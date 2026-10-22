@@ -33,7 +33,7 @@ a{color:inherit}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--a),#8a5cf6);z-index:60}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
-nav b{font:700 19px "Bricolage Grotesque",sans-serif;margin-right:auto;letter-spacing:-.02em}
+nav .brand{font:700 19px "Bricolage Grotesque",sans-serif;margin-right:auto;letter-spacing:-.02em;color:var(--ink)}
 nav a{color:var(--mute);text-decoration:none;font-size:15px;font-weight:500}
 nav a:hover{color:var(--ink)}
 @media(max-width:720px){nav a:not(.keep){display:none}}
@@ -185,10 +185,11 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 @media(max-width:760px){.pugwrap{max-width:230px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p,.btns,.chips span{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
+<script data-goatcounter="https://nathanielnesakumar.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#intern">Freshers</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
+<nav><div class="wrap"><a class="brand keep" href="#top" aria-label="Back to the top of the page">Nathaniel P. Nesakumar</a><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#intern">Freshers</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero" id="top">
 <canvas id="net" aria-hidden="true"></canvas>
@@ -308,6 +309,8 @@ for(var j=i+1;j<N.length;j++){var b=N[j],dd=Math.hypot(a.x-b.x,a.y-b.y);if(dd<13
 if(!red)requestAnimationFrame(draw)}
 c.parentNode.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
 sz();draw();addEventListener("resize",function(){sz();if(red)draw()})})();
+/* name goes to the very top */
+document.querySelector(".brand").addEventListener("click",function(e){e.preventDefault();scrollTo({top:0,behavior:red?"auto":"smooth"});if(history.replaceState)history.replaceState(null,"",location.pathname+location.search)});
 /* scroll progress */
 addEventListener("scroll",function(){var d=document.documentElement;$("bar").style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+"%"},{passive:true});
 /* count-up */
@@ -390,8 +393,7 @@ w:function(){return"https://wa.me/"+["91","9043","010788"].join("")}};
 document.querySelectorAll(".ic button").forEach(function(b){b.onclick=function(){var u=P[b.dataset.k]();if(b.dataset.k==="m")location.href=u;else window.open(u,"_blank","noopener")}});
 $("shr").onclick=function(){var d={title:document.title,url:location.href};if(navigator.share)navigator.share(d).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(d.url);$("shr").textContent="Link copied"}};
 /* visitor analytics: paste your GoatCounter code (the part before .goatcounter.com) between the quotes */
-var GC="nathanielnesakumar";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g);
-fetch("https://"+GC+".goatcounter.com/counter/TOTAL.json").then(function(r){return r.json()}).then(function(d){var v=$("vc");if(d&&d.count){v.textContent=d.count+" views";v.hidden=false}}).catch(function(){})}
+var GC="nathanielnesakumar";if(GC){fetch("https://"+GC+".goatcounter.com/counter/TOTAL.json").then(function(r){return r.json()}).then(function(d){var v=$("vc");if(d&&d.count){v.textContent=d.count+" views";v.hidden=false}}).catch(function(){})}
 </script>
 </body>
 </html>
