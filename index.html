@@ -4,9 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nathaniel P. Nesakumar · Learning, Talent &amp; OD Leader</title>
-<meta name="description" content="Two decades of learning and development, talent management and organization development across engineering, EPC and manufacturing. SPHRi certified.">
+<meta name="description" content="SPHRi certified learning, talent and OD leader. 5,250+ people trained, 2,200+ trainees inducted, LMS rollouts and Great Place to Work projects across engineering, EPC and manufacturing.">
 <meta property="og:title" content="Nathaniel P. Nesakumar · Learning, Talent & OD Leader">
 <meta property="og:description" content="Capability building that moves the business.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Nathaniel P. Nesakumar","jobTitle":"Learning and Development Leader","knowsAbout":["Learning and Development","Instructional Design","LMS Implementation","Talent Management","Organization Development"]}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +21,11 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-t
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nav);z-index:30}
-h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-spacing:-.025em;line-height:1.02}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-spacing:-.025em;line-height:1.05}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 :focus-visible{outline:2px solid var(--a);outline-offset:3px}
 a{color:inherit}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--a),#8a5cf6);z-index:60}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
 nav b{font:700 19px "Bricolage Grotesque",sans-serif;margin-right:auto;letter-spacing:-.02em}
@@ -42,25 +44,32 @@ nav a:hover{color:var(--ink)}
 .hero p{max-width:56ch;color:var(--mute);font-size:19px;margin:0 0 32px;opacity:0;animation:rise .9s .75s cubic-bezier(.2,.8,.2,1) forwards}
 .btns{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:rise .9s .95s cubic-bezier(.2,.8,.2,1) forwards}
 @keyframes rise{to{opacity:1;transform:none}}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:40px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:transparent;cursor:pointer;font-family:inherit;transition:transform .2s,box-shadow .2s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:40px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);color:var(--ink);background:transparent;cursor:pointer;font-family:inherit;transition:transform .2s}
 .btn.p{background:linear-gradient(135deg,var(--a),#8a5cf6);color:#fff;border-color:transparent;box-shadow:0 12px 34px -10px var(--a)}
 .btn:hover{transform:translateY(-2px)}
 .btn svg{width:18px;height:18px}
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:64px;border-top:1px solid var(--line)}
-.st{padding:22px 18px 4px 0}
-.st b{display:block;font:600 clamp(36px,4.6vw,52px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em}
-.st span{display:block;color:var(--mute);font-size:14px;line-height:1.35;margin-top:8px;max-width:20ch}
 section{padding:96px 0;position:relative}
 .alt{background:var(--bg2)}
 .h2{font-size:clamp(34px,5.4vw,62px);max-width:17ch;font-weight:700}
 .sub{color:var(--mute);max-width:56ch;margin:16px 0 44px}
+/* impact */
+.imp{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:26px;overflow:hidden}
+.imp>div{background:var(--bg);padding:44px 34px 40px;transition:background .3s}
+.imp>div:hover{background:var(--bg2)}
+.imp b{display:block;font:700 clamp(48px,6.4vw,84px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em;background:linear-gradient(135deg,var(--ink) 30%,var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
+.imp span{display:block;color:var(--mute);font-size:16px;line-height:1.4;margin-top:14px;max-width:24ch}
+@media(max-width:820px){.imp{grid-template-columns:repeat(2,1fr)}.imp>div{padding:30px 20px}}
+.sw{border-top:1px solid var(--line);margin-top:56px}
+.sw div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px 40px;padding:26px 0;border-bottom:1px solid var(--line)}
+.sw h3{font-size:clamp(24px,3vw,34px)}
+.sw p{margin:0;color:var(--mute)}
+@media(max-width:700px){.sw div{grid-template-columns:1fr}}
 /* timeline */
 .tl{position:relative;padding-left:44px;max-width:800px}
 .tl::before,.tl i{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:2px;background:var(--line)}
 .tl i{bottom:auto;height:0;background:linear-gradient(var(--g),var(--a));transition:height .15s linear}
 .ev{position:relative;padding:0 0 38px;cursor:pointer}
-.ev::before{content:"";position:absolute;left:-41px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--line);transition:.3s}
+.ev::before{content:"";position:absolute;left:-41px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--bg2);border:2px solid var(--line);transition:.3s}
 .ev.on::before{border-color:var(--a);background:var(--a);box-shadow:0 0 0 6px var(--soft)}
 .ev .yr{font-size:14px;color:var(--g);font-weight:600}
 .ev h3{font-size:clamp(26px,3.4vw,36px);margin:4px 0 2px}
@@ -72,13 +81,24 @@ section{padding:96px 0;position:relative}
 .ev li{padding:7px 0 7px 18px;color:var(--mute);position:relative;font-size:16px}
 .ev li::before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--g)}
 .hint{color:var(--mute);font-size:14px;margin:-26px 0 34px}
-/* skills */
-.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px 34px}
-.sk h3{font-size:28px;padding-bottom:12px;border-bottom:2px solid var(--a);margin-bottom:6px;display:inline-block}
-.sk p{color:var(--mute);margin:8px 0 14px;font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{border:1px solid var(--line);border-radius:30px;padding:5px 13px;font-size:14px;font-weight:500;background:var(--bg);transition:border-color .2s}
-.chips span:hover{border-color:var(--a)}
+/* expertise */
+.xp{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:34px}
+@media(max-width:820px){.xp{grid-template-columns:1fr}}
+.xl{display:flex;flex-direction:column;gap:6px}
+.xl button{text-align:left;background:none;border:0;border-left:3px solid var(--line);padding:16px 0 16px 22px;font:600 clamp(24px,3vw,34px)/1.1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;color:var(--mute);cursor:pointer;transition:.3s}
+.xl button:hover{color:var(--ink)}
+.xl button[aria-selected="true"]{color:var(--ink);border-image:linear-gradient(var(--g),var(--a)) 1;padding-left:30px}
+.xr{position:relative;border-radius:28px;padding:38px;border:1px solid var(--line);background:linear-gradient(150deg,var(--soft),transparent 60%),var(--bg);overflow:hidden;min-height:340px}
+.xr::before{content:"";position:absolute;width:320px;height:320px;right:-110px;top:-110px;border-radius:50%;background:radial-gradient(circle,var(--a),transparent 68%);opacity:.28;filter:blur(20px)}
+.xr h3{font-size:clamp(26px,3.2vw,38px);max-width:18ch;position:relative}
+.xr .pf{display:inline-block;margin:16px 0 22px;padding:7px 16px;border-radius:30px;background:var(--ink);color:var(--bg);font-weight:600;font-size:14px;position:relative}
+.chips{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.chips span{border:1px solid var(--line);border-radius:30px;background:var(--bg);font-size:15px;padding:7px 15px;font-weight:500;opacity:0;transform:translateY(12px) scale(.96);animation:rise .5s cubic-bezier(.2,.8,.2,1) forwards}
+.mq{margin-top:56px;overflow:hidden;border-block:1px solid var(--line);padding:18px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.mq div{display:flex;gap:46px;width:max-content;animation:mq 34s linear infinite}
+.mq:hover div{animation-play-state:paused}
+.mq span{font:600 22px "Bricolage Grotesque",sans-serif;color:var(--mute);white-space:nowrap}
+@keyframes mq{to{transform:translateX(-50%)}}
 /* programs */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
 .tab{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:30px;padding:9px 20px;font:500 15px "DM Sans";cursor:pointer;transition:.2s}
@@ -88,7 +108,7 @@ section{padding:96px 0;position:relative}
 .it b{font:600 19px "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
 .it small{color:var(--mute);font-size:14px;text-align:right}
 /* credentials */
-.cr{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0 44px}
+.cr{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 44px}
 .cd{padding:20px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:64px 1fr;gap:6px 16px}
 .cd .y{color:var(--g);font-weight:600;font-size:14px;padding-top:4px}
 .cd h3{font-size:23px}
@@ -99,15 +119,16 @@ section{padding:96px 0;position:relative}
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
 .ct p{color:var(--mute);max-width:46ch;margin:20px auto 34px}
-.ic{display:flex;justify-content:center;gap:16px;margin-top:34px}
+.ic{display:flex;justify-content:center;gap:16px;margin:34px 0 22px}
 .ic button{width:60px;height:60px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:transform .25s,background .25s,color .25s,box-shadow .25s}
 .ic button:hover{transform:translateY(-5px);background:var(--a);color:#fff;box-shadow:0 14px 30px -10px var(--a)}
 .ic svg{width:24px;height:24px}
 footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);font-size:14px;text-align:center}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p,.btns{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 span,.hero p,.btns,.chips span{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div id="bar"></div>
 <nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero" id="top">
@@ -115,55 +136,69 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <div class="wrap">
 <span class="pill">Learning, talent and organization development</span>
 <h1 aria-label="Capability building that moves the business."><span style="animation-delay:.15s">Capability</span> <span style="animation-delay:.27s">building</span> <span style="animation-delay:.39s">that</span> <span style="animation-delay:.51s">moves</span> <span style="animation-delay:.63s">the&nbsp;business.</span></h1>
-<p>Two decades of designing learning journeys, launching learning platforms and building talent pipelines across engineering, EPC, manufacturing and HR transformation, in six countries.</p>
-<div class="btns"><a class="btn p" href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Download resume</a><a class="btn" href="#career">See my journey</a></div>
-<div class="stats" id="impact">
-<div class="st"><b data-n="20" data-s="+">0</b><span>years in learning, talent and OD</span></div>
-<div class="st"><b data-n="5250" data-s="+">0</b><span>people trained</span></div>
-<div class="st"><b data-n="42000" data-s="+">0</b><span>training man-hours delivered</span></div>
-<div class="st"><b data-n="1200" data-s="+">0</b><span>graduate engineers and trainees inducted</span></div>
-<div class="st"><b data-n="1800" data-s="+">0</b><span>professionals recruited</span></div>
-<div class="st"><b data-n="39" data-p="#">0</b><span>Great Place to Work rank, led as project manager</span></div>
-</div>
+<p>Mechanical engineer turned learning leader. For 19+ years I have designed learning journeys, launched learning platforms and built talent pipelines across engineering, EPC and manufacturing, in six countries.</p>
+<div class="btns"><a class="btn p" href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Download resume</a><a class="btn" href="#impact">See the impact</a></div>
 </div>
 </header>
 
-<section id="career"><div class="wrap">
+<section id="impact"><div class="wrap">
+<h2 class="h2">Impact, in numbers.</h2>
+<p class="sub">Across recruitment, induction, training and engagement work.</p>
+<div class="imp">
+<div><b data-n="19" data-s="+">0</b><span>years in learning, talent and OD</span></div>
+<div><b data-n="5250" data-s="+">0</b><span>people trained</span></div>
+<div><b data-n="42000" data-s="+">0</b><span>training man-hours delivered</span></div>
+<div><b data-n="2000" data-s="+">0</b><span>people recruited</span></div>
+<div><b data-n="2200" data-s="+">0</b><span>graduate engineers and management trainees inducted</span></div>
+<div><b data-n="39" data-p="#">0</b><span>Great Place to Work rank, 2024–25, led as project manager</span></div>
+</div>
+<div class="sw">
+<div><h3>A learning platform for 2,000+ employees</h3><p>Evaluated vendors, wrote the business requirements and led the LMS rollout as program manager.</p></div>
+<div><h3>A Center of Excellence for capability</h3><p>Built the model, a competency framework and learning journeys for executive, managerial and leadership programs.</p></div>
+<div><h3>300+ product training videos</h3><p>Storyboarded and digitised sales and product training with SCORM tracking for a building materials business.</p></div>
+<div><h3>40% business growth in recruitment</h3><p>Won new client relationships while leading a center serving automobile and EPC clients.</p></div>
+</div>
+</div></section>
+
+<section id="career" class="alt"><div class="wrap">
 <h2 class="h2">A career built across industries and borders.</h2>
 <p class="sub">From engineering recruitment to building learning functions from scratch.</p>
 <p class="hint">Select a role to expand it.</p>
 <div class="tl" id="tl"><i id="prog"></i></div>
 </div></section>
 
-<section id="cap" class="alt"><div class="wrap">
+<section id="cap"><div class="wrap">
 <h2 class="h2">Four disciplines, one outcome.</h2>
-<p class="sub">Capability that shows up in performance, retention and culture.</p>
-<div class="sk" id="sk"></div>
+<p class="sub">Choose a discipline to see what sits behind it.</p>
+<div class="xp"><div class="xl" id="xl" role="tablist"></div><div class="xr" id="xr" role="tabpanel" aria-live="polite"></div></div>
+<div class="mq" aria-label="Platforms and tools"><div id="mq"></div></div>
 </div></section>
 
-<section id="lib"><div class="wrap">
+<section id="lib" class="alt"><div class="wrap">
 <h2 class="h2">A library of programs I’ve built.</h2>
 <p class="sub">Participant manuals, facilitator guides, e-learning modules and microlearning.</p>
 <div class="tabs" id="ltabs"></div>
 <div class="lib" id="libg"></div>
 </div></section>
 
-<section id="cred" class="alt"><div class="wrap">
+<section id="cred"><div class="wrap">
 <h2 class="h2">Certified and continually learning.</h2>
 <p class="sub">Credentials from HRCI, FMC University Singapore, the University of Minnesota and Anna University.</p>
 <div class="cr" id="crg"></div>
 <div class="langs" id="lang"></div>
+<p style="color:var(--mute);margin-top:22px">Outside work: reading, playing guitar and driving.</p>
 </div></section>
 
 <section class="ct" id="contact"><div class="wrap">
 <h2 class="big">Let’s build your people’s next capability.</h2>
-<p>Download my resume or reach out on the channel that suits you.</p>
+<p>Download my resume, send a note, or share this page with someone building a learning team.</p>
 <a class="btn p" href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Download resume</a>
 <div class="ic">
 <button type="button" data-k="m" aria-label="Send an email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></button>
 <button type="button" data-k="l" aria-label="Open LinkedIn profile" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9.75h4V21H3zM9.75 9.75h3.8v1.6h.06c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.6 4.75 6V21h-4v-4.8c0-1.15 0-2.6-1.6-2.6s-1.8 1.25-1.8 2.55V21h-4z"/></svg></button>
 <button type="button" data-k="w" aria-label="Message on WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-4.8A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.1-1.1z"/><path d="M9 8.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-.8.8c-.8-.4-1.5-1.1-1.9-1.9l.8-.8-1-2z"/></svg></button>
 </div>
+<button class="btn" id="shr" type="button">Share this portfolio</button>
 </div></section>
 <footer><div class="wrap">© Nathaniel P. Nesakumar. SPHRi certified.</div></footer>
 <noscript><p style="text-align:center;padding:20px">Please enable JavaScript to view the full portfolio.</p></noscript>
@@ -172,19 +207,19 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 var $=function(i){return document.getElementById(i)};
 function mk(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!==undefined)e.innerHTML=h;return e}
 var red=matchMedia("(prefers-reduced-motion:reduce)").matches;
-/* theme */
 $("th").onclick=function(){var d=document.documentElement,dark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;d.dataset.theme=dark?"light":"dark"};
 /* network hero */
 (function(){var c=$("net"),x=c.getContext("2d"),N=[],W,H,m={x:-999,y:-999},dpr=Math.min(devicePixelRatio||1,2);
 function sz(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);N=[];for(var i=0;i<Math.round(W*H/16000);i++)N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
-function col(){return getComputedStyle(document.documentElement).getPropertyValue("--node").trim()}
-function draw(){var k=col();x.clearRect(0,0,W,H);
-for(var i=0;i<N.length;i++){var a=N[i];if(!red){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;var dx=m.x-a.x,dy=m.y-a.y,d=Math.hypot(dx,dy);if(d<150){a.x+=dx*.012;a.y+=dy*.012}}
+function draw(){var k=getComputedStyle(document.documentElement).getPropertyValue("--node").trim();x.clearRect(0,0,W,H);
+for(var i=0;i<N.length;i++){var a=N[i];if(!red){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;var dx=m.x-a.x,dy=m.y-a.y;if(Math.hypot(dx,dy)<150){a.x+=dx*.012;a.y+=dy*.012}}
 x.fillStyle="rgba("+k+",.75)";x.beginPath();x.arc(a.x,a.y,2,0,6.3);x.fill();
 for(var j=i+1;j<N.length;j++){var b=N[j],dd=Math.hypot(a.x-b.x,a.y-b.y);if(dd<130){x.strokeStyle="rgba("+k+","+(.32*(1-dd/130))+")";x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}}
 if(!red)requestAnimationFrame(draw)}
 c.parentNode.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
 sz();draw();addEventListener("resize",function(){sz();if(red)draw()})})();
+/* scroll progress */
+addEventListener("scroll",function(){var d=document.documentElement;$("bar").style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+"%"},{passive:true});
 /* count-up */
 var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;io.unobserve(en.target);var el=en.target,n=+el.dataset.n,s=el.dataset.s||"",p=el.dataset.p||"",t0=null;
 function f(t){if(red){el.textContent=p+n.toLocaleString("en-US")+s;return}if(!t0)t0=t;var k=Math.min((t-t0)/1500,1);el.textContent=p+Math.round(n*(1-Math.pow(1-k,3))).toLocaleString("en-US")+s;if(k<1)requestAnimationFrame(f)}
@@ -192,45 +227,52 @@ requestAnimationFrame(f)})},{threshold:.5});
 document.querySelectorAll("[data-n]").forEach(function(e){io.observe(e)});
 /* career */
 var R=[
-["2005","2009","Covenant Consultants","Recruiter, Center Head","Chennai and Bangalore",["Recruited 1,000+ engineering and project professionals for automobile and EPC clients","Grew business 40% by winning new client relationships","Trained new hires on job roles and expectations"]],
-["2009","2012","Adani Power","Associate Manager, Recruitment and Training Development","Gujarat and Maharashtra",["Recruited 800+ people for power plant projects","Designed a six-month induction for 1,200+ graduate engineer and management trainees","Built a mentor-mentee model for knowledge transfer"]],
-["2012","2015","Center for Excellence in Organizations","Senior OD Consultant","India",["Implemented High-Performance Work Systems at Ashok Leyland and TAFE","Improved performance, quality, delivery, safety, cost and morale","Led a LEAN management rollout with a balanced scorecard"]],
-["2016","2018","TechnipFMC","Training Specialist","Hyderabad and Singapore",["Built the L&D function architecture for global operations","Started weekly learning circles that created learning communities","Created learning tracks for high-potential employees"]],
-["2018","2020","RAB HR","L&D Consultant","Oman, Dubai, UAE and Qatar",["Storyboarded CoC, PoSH, change management and HSE modules","Demonstrated CSOD LMS and PMS to Middle East clients","Presented on assessment and development centres"]],
-["2020","2021","IRM Group","AGM, Talent Management","Ahmedabad",["Established the L&D function and talent architecture","Ran team-building interventions at factories and plants","Introduced KRAs and continuous performance reviews"]],
-["2021","2022","TechnoIdentity","Chief Human Resources Officer","Hyderabad",["Built L&D, engagement and performance management from scratch","Launched a KRA/KPI-based performance system","Started fortnightly Leaders Connect sessions with microlearning"]],
-["2021","2024","Aarti Industries","Senior Manager, Capability Building","Vadodara",["Led an LMS implementation for 2,000+ employees as program manager","Built a Center of Excellence model and a competency framework","Trained 5,250 people for 42,000 man-hours"]],
-["2024","2024","PGP Glass","AGM, Learning and Development","Surat",["Project-managed Great Place to Work: rank 40, then rank 39","Ran the engagement survey and designed OD actions","Linked practices to values, mission, vision and DEI"]],
-["2024","2025","Watertec","AGM, Learning and Development","Coimbatore",["Implemented an LMS and digitised sales training with SCORM","Storyboarded training for 300+ building materials products","Led L&D strategy and digitisation"]]];
+["Jun 2025","Present","A diversified engineering group","Head, Learning and Development","Middle East",["Lead group L&D strategy across engineering, EPC, manufacturing and project businesses","Run safety, compliance, technical and leadership programs with approved vendors","Measure training effectiveness and ROI, and manage budgets, vendors and audit readiness"]],
+["Oct 2024","May 2025","Watertec","AGM, Learning and Development","Coimbatore",["Led L&D strategy and digitisation for a building materials manufacturer","Implemented an LMS and digitised sales training with SCORM","Storyboarded training videos for 300+ products"]],
+["Jun 2024","Oct 2024","PGP Glass","AGM, Learning and Development","Surat",["Project-managed Great Place to Work: rank 40 (2023–24), then rank 39 (2024–25)","Ran the engagement survey and designed OD interventions","Linked practices to values, mission, vision and DEI"]],
+["Jun 2021","Jun 2024","Aarti Industries","Senior Manager, Capability Building","Vadodara",["Led an LMS (Enthrall/Disprz) rollout for 2,000+ employees as program manager","Built a Center of Excellence model and a competency framework","Trained 5,250 people for 42,000 man-hours"]],
+["Jun 2021","Mar 2022","TechnoIdentity","Chief Human Resources Officer","Hyderabad",["Built L&D, engagement and performance management from the ground up","Launched a KRA/KPI performance system with continuous reviews","Started fortnightly Leaders Connect sessions with microlearning"]],
+["Jan 2020","Jun 2021","IRM Group","AGM, Talent Management","Ahmedabad",["Established the L&D function and talent architecture","Ran team-building interventions at factories and plants","Introduced KRAs and continuous performance reviews"]],
+["Nov 2018","Jan 2020","RAB HR","L&D Consultant","Oman, Dubai, UAE and Qatar",["Storyboarded CoC, PoSH, change management and HSE modules","Demonstrated CSOD LMS and PMS to Middle East clients","Presented on assessment and development centres"]],
+["May 2016","Aug 2018","TechnipFMC","Training Specialist","Hyderabad and Singapore",["Designed the L&D function architecture for global operations","Started weekly learning circles that built learning communities","Created learning tracks for high-potential employees"]],
+["Apr 2012","Jun 2015","Center for Excellence in Organizations","Senior OD Consultant","India",["Implemented High-Performance Work Systems at Ashok Leyland and TAFE","Improved performance, quality, delivery, safety, cost and morale","Facilitated a LEAN rollout with a balanced scorecard"]],
+["Apr 2009","Apr 2012","Adani Power","Associate Manager, Recruitment and Training Development","Gujarat and Maharashtra",["Recruited 800+ people for power plant projects","Designed six-month induction for 1,200+ graduate engineer and management trainees","Built a mentor-mentee model for knowledge transfer"]],
+["Apr 2005","Apr 2009","Covenant Consultants","Recruiter, Center Head","Chennai and Bangalore",["Recruited 1,000+ engineering and project professionals for automobile and EPC clients","Grew business 40% by winning new client relationships","Trained new hires on job roles and expectations"]]];
 var tl=$("tl"),evs=[];
-R.forEach(function(r,i){var e=mk("div","ev","<div class='yr'>"+r[0]+(r[1]!==r[0]?" to "+r[1]:"")+"</div><h3>"+r[2]+"</h3><div class='rl'>"+r[3]+"</div><div class='ml'>"+r[4]+"</div><ul><div>"+r[5].map(function(h){return"<li>"+h+"</li>"}).join("")+"</div></ul>");
+R.forEach(function(r){var e=mk("div","ev","<div class='yr'>"+r[0]+" to "+r[1]+"</div><h3>"+r[2]+"</h3><div class='rl'>"+r[3]+"</div><div class='ml'>"+r[4]+"</div><ul><div>"+r[5].map(function(h){return"<li>"+h+"</li>"}).join("")+"</div></ul>");
 e.tabIndex=0;e.setAttribute("role","button");e.setAttribute("aria-expanded","false");
 function t(){var o=e.classList.toggle("open");e.setAttribute("aria-expanded",o)}
 e.onclick=t;e.onkeydown=function(k){if(k.key==="Enter"||k.key===" "){k.preventDefault();t()}};tl.appendChild(e);evs.push(e)});
-evs[evs.length-1].classList.add("open");
-function sc(){var r=tl.getBoundingClientRect(),y=innerHeight*.55,h=Math.max(0,Math.min(r.height,y-r.top));$("prog").style.height=h+"px";evs.forEach(function(e){e.classList.toggle("on",e.getBoundingClientRect().top<y)})}
+evs[0].classList.add("open");evs[0].setAttribute("aria-expanded","true");
+function sc(){var r=tl.getBoundingClientRect(),y=innerHeight*.55;$("prog").style.height=Math.max(0,Math.min(r.height,y-r.top))+"px";evs.forEach(function(e){e.classList.toggle("on",e.getBoundingClientRect().top<y)})}
 addEventListener("scroll",sc,{passive:true});sc();
-/* skills */
-var CAP=[["Learning and development","Programs that close real capability gaps.",["Instructional design","ADDIE","Content development","Learning journeys","Curriculum design","e-Learning","Train-the-trainer","Facilitation"]],
-["HR transformation","Systems that make people processes measurable.",["LMS implementation","Performance management","Competency frameworks","Engagement","GPTW","Gallup","SABA","Disprz","CSOD","SCORM"]],
-["Talent management","From first interview to succession.",["Recruitment","Onboarding","Succession planning","Assessment centres","Psychometrics","DiSC"]],
-["Organization development","Culture and teams that lift performance.",["HPWS","Team building","Change management","Employee branding","KRA and KPI design","LEAN","Balanced scorecard"]]];
-CAP.forEach(function(c){$("sk").appendChild(mk("div","","<h3>"+c[0]+"</h3><p>"+c[1]+"</p><div class='chips'>"+c[2].map(function(s){return"<span>"+s+"</span>"}).join("")+"</div>"))});
+/* expertise */
+var CAP=[["Learning and development","Programs that close real capability gaps.","5,250+ people trained, 42,000+ hours",["Instructional design","ADDIE model","Content development","Learning journeys","Curriculum design","e-Learning","Train-the-trainer","Training delivery"]],
+["HR transformation","Systems that make people processes measurable.","LMS live for 2,000+ employees",["LMS implementation","Performance management","Competency frameworks","Employee engagement","GPTW","Gallup","Business requirements"]],
+["Talent management","From first interview to succession.","2,000+ hired, 2,200+ trainees inducted",["End-to-end recruitment","Onboarding","Succession planning","Assessment centres","Psychometrics","Culture-fit interviews"]],
+["Organization development","Culture and teams that lift performance.","HPWS at Ashok Leyland and TAFE",["High-performance work systems","Team building","Change management","Employee branding","KRA and KPI design","LEAN","Balanced scorecard"]]];
+function xs(i){var c=CAP[i];document.querySelectorAll("#xl button").forEach(function(b,j){b.setAttribute("aria-selected",j===i)});
+$("xr").innerHTML="<h3>"+c[1]+"</h3><div class='pf'>"+c[2]+"</div><div class='chips'>"+c[3].map(function(s,k){return"<span style='animation-delay:"+(k*55)+"ms'>"+s+"</span>"}).join("")+"</div>"}
+CAP.forEach(function(c,i){var b=mk("button","",c[0]);b.setAttribute("role","tab");b.onclick=function(){xs(i)};b.onmouseenter=function(){if(matchMedia("(hover:hover)").matches)xs(i)};$("xl").appendChild(b)});xs(0);
+var T=["SABA","Zobble","Disprz","Enthrall","CSOD","Coursera","Adobe Captivate","SCORM","DiSC","Storyboarding","ATS","PMS"];$("mq").innerHTML=T.concat(T).map(function(t){return"<span>"+t+"</span>"}).join("");
 /* library */
-var L=[["Behavioural","Getting Things Done","David Allen"],["Behavioural","Crucial Conversations","VitalSmarts"],["Behavioural","Atomic Habits","James Clear"],["Behavioural","Personality Plus","Florence Littauer"],["Behavioural","The Coaching Habit","Coaching skills"],["Behavioural","Transformed Temperament","Collaboration"],["Behavioural","Blackbox Thinking","Innovation and creativity"],["Behavioural","Power of Your Subconscious Mind","Joseph Murphy"],["Behavioural","Storytelling","HRCP Knowledge Body"],["Behavioural","Behavioral Event Interviewing","HRCP Knowledge Body"],
+var L=[["Behavioural","Getting Things Done","David Allen"],["Behavioural","Crucial Conversations","VitalSmarts"],["Behavioural","Atomic Habits","James Clear"],["Behavioural","Personality Plus","Florence Littauer"],["Behavioural","The Coaching Habit","Michael Bungay Stanier"],["Behavioural","Transformed Temperament","Tim LaHaye"],["Behavioural","Blackbox Thinking","Matthew Syed"],["Behavioural","Power of Your Subconscious Mind","Joseph Murphy"],["Behavioural","Storytelling","HRCP Knowledge Body"],["Behavioural","Behavioral Event Interviewing","HRCP Knowledge Body"],
 ["Technical","Engineering Drawing and Symbols","Technical"],["Technical","Sales Force Automation","Software training"],["Technical","RESPECT Call Process","Process training"],["Technical","Disprz LMS","Users and administrators"],["Technical","300+ product videos","Building materials"],["Technical","The Psychology of Selling","Bite-sized modules"],
 ["e-Learning","Code of Conduct","Compliance"],["e-Learning","Prevention of Sexual Harassment","Compliance"],["e-Learning","Health, Safety and Environment","Compliance"],["e-Learning","The Art of Selling","Sales"],["e-Learning","Accountability","Behavioural"],["e-Learning","Change Management","Leadership"],["e-Learning","Banking statutory modules","Compliance"],
 ["Leadership","Decision Making Skills","Two-minute video modules"],["Leadership","Performance Evaluation Biases","Managers"],["Leadership","Influencing Skills","Leadership"]];
 var lf="All";["All","Behavioural","Technical","e-Learning","Leadership"].forEach(function(t){var b=mk("button","tab",t);b.setAttribute("aria-pressed",t==="All");b.onclick=function(){lf=t;document.querySelectorAll("#ltabs .tab").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");lib()};$("ltabs").appendChild(b)});
 function lib(){var g=$("libg");g.innerHTML="";L.filter(function(x){return lf==="All"||x[0]===lf}).forEach(function(x,i){var d=mk("div","it","<b>"+x[1]+"</b><small>"+x[2]+"</small>");d.style.animationDelay=(i*20)+"ms";g.appendChild(d)})}lib();
 /* credentials */
-[["2019","SPHRi","Senior Professional in Human Resources, International","HRCI, USA. Distinction"],["2016","Certified ADDIE Content Developer","Also certified Train the Trainer","FMC University, Singapore"],["2021","Managing Human Resources","80.41%","University of Minnesota via Coursera"],["2005","B.E. Mechanical Engineering","Anna University","Kings Engineering College, Chennai"],["2020","Adobe Captivate","e-Learning authoring","Udemy"],["2011","Balanced Scorecard","Strategy and performance","NHRD, Nagpur"]].forEach(function(c){$("crg").appendChild(mk("div","cd","<div class='y'>"+c[0]+"</div><div><h3>"+c[1]+"</h3><div>"+c[2]+"</div><small>"+c[3]+"</small></div>"))});
+[["2019","SPHRi","Senior Professional in Human Resources, International","HRCI, USA. Distinction (75%)"],["2016","Certified ADDIE Content Developer","Also Certified Train the Trainer, 2015–16","FMC University, Singapore"],["2021","Managing Human Resources","80.41%","University of Minnesota via Coursera"],["2005","B.E. Mechanical Engineering","67%","Anna University, Kings Engineering College"],["2020","Adobe Captivate","e-Learning authoring","Udemy"],["2011","Balanced Scorecard","Strategy and performance","NHRD, Nagpur"],["2016","Train-the-Trainer","Facilitation skills","Fourth Dimension, Mumbai"],["2016–17","Business, HRD and People Management","Four programs including Organizational Learning","FMC University, Singapore"]].forEach(function(c){$("crg").appendChild(mk("div","cd","<div class='y'>"+c[0]+"</div><div><h3>"+c[1]+"</h3><div>"+c[2]+"</div><small>"+c[3]+"</small></div>"))});
 ["English, fluent","Tamil, fluent","Hindi, intermediate","Malayalam, intermediate"].forEach(function(l){$("lang").appendChild(mk("span","",l))});
 /* contact: details are assembled on click, never written into the page */
 var P={m:function(){return"mailto:"+["sundarnesakumar","gmail.com"].join(String.fromCharCode(64))},
 l:function(){return["https:","","www.linkedin.com","in","nathaniel-pon-sundarji-bb0695a"].join("/")},
 w:function(){return"https://wa.me/"+["91","9043","010788"].join("")}};
 document.querySelectorAll(".ic button").forEach(function(b){b.onclick=function(){var u=P[b.dataset.k]();if(b.dataset.k==="m")location.href=u;else window.open(u,"_blank","noopener")}});
+$("shr").onclick=function(){var d={title:document.title,url:location.href};if(navigator.share)navigator.share(d).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(d.url);$("shr").textContent="Link copied"}};
+/* visitor analytics: paste your GoatCounter code (the part before .goatcounter.com) between the quotes */
+var GC="";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g)}
 </script>
 </body>
 </html>
