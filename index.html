@@ -390,7 +390,7 @@ w:function(){return"https://wa.me/"+["91","9043","010788"].join("")}};
 document.querySelectorAll(".ic button").forEach(function(b){b.onclick=function(){var u=P[b.dataset.k]();if(b.dataset.k==="m")location.href=u;else window.open(u,"_blank","noopener")}});
 $("shr").onclick=function(){var d={title:document.title,url:location.href};if(navigator.share)navigator.share(d).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(d.url);$("shr").textContent="Link copied"}};
 /* visitor analytics: paste your GoatCounter code (the part before .goatcounter.com) between the quotes */
-var GC="";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g);
+var GC="nathanielnesakumar";if(GC){var g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter="https://"+GC+".goatcounter.com/count";document.head.appendChild(g);
 fetch("https://"+GC+".goatcounter.com/counter/TOTAL.json").then(function(r){return r.json()}).then(function(d){var v=$("vc");if(d&&d.count){v.textContent=d.count+" views";v.hidden=false}}).catch(function(){})}
 </script>
 </body>
