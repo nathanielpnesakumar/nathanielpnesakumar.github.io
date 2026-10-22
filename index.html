@@ -100,13 +100,21 @@ section{padding:96px 0;position:relative}
 .mq:hover div{animation-play-state:paused}
 .mq span{font:600 22px "Bricolage Grotesque",sans-serif;color:var(--mute);white-space:nowrap}
 @keyframes mq{to{transform:translateX(-50%)}}
+.hi{margin:0 0 14px;font-weight:600;color:var(--g);font-size:18px;opacity:0;animation:rise .8s .05s forwards}
 /* tip of the day */
-.tipband{background:radial-gradient(80% 120% at 85% 0%,var(--soft),transparent 60%),var(--bg)}
+.tipband{padding:70px 0;background:radial-gradient(80% 120% at 85% 0%,var(--soft),transparent 60%),var(--bg);border-bottom:1px solid var(--line)}
+.tipgrid{display:grid;grid-template-columns:minmax(200px,270px) minmax(0,1fr);gap:40px;align-items:center}
+.pugwrap{position:relative}
+.pugwrap::before{content:"";position:absolute;inset:8% 4% 6%;border-radius:50%;background:radial-gradient(circle,var(--a),transparent 70%);opacity:.3;filter:blur(18px)}
+.pug{position:relative;width:100%;height:auto;animation:bob 4.5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{50%{transform:translateY(-8px) rotate(-1.5deg)}}
+.tc::after{content:"";position:absolute;left:-11px;top:50%;width:22px;height:22px;background:var(--bg);border-left:1px solid var(--line);border-bottom:1px solid var(--line);transform:translateY(-50%) rotate(45deg)}
+@media(max-width:760px){.tipgrid{grid-template-columns:1fr;gap:26px}.pugwrap{max-width:200px;margin:0 auto}.tc::after{left:50%;top:-11px;transform:translateX(-50%) rotate(135deg)}}
 .tc{border:1px solid var(--line);border-radius:30px;padding:clamp(26px,5vw,56px);background:linear-gradient(150deg,var(--soft),transparent 55%),var(--bg);position:relative;overflow:hidden}
 .tc::before{content:"\201C";position:absolute;right:26px;top:-34px;font:700 220px/1 "Bricolage Grotesque",serif;color:var(--a);opacity:.12}
 .tm{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--mute);font-weight:600}
 .tt{padding:5px 14px;border-radius:30px;background:var(--ink);color:var(--bg);font-size:14px}
-.tx{font:600 clamp(28px,4.6vw,52px)/1.12 "Bricolage Grotesque",sans-serif;letter-spacing:-.025em;margin:26px 0 34px;max-width:24ch;position:relative;color:var(--ink)}
+.tx{font:600 clamp(26px,3.8vw,44px)/1.14 "Bricolage Grotesque",sans-serif;letter-spacing:-.025em;margin:26px 0 34px;max-width:24ch;position:relative;color:var(--ink)}
 .tx.sw1{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
 .ta{display:flex;gap:10px;flex-wrap:wrap}
 .ta .btn{padding:11px 20px;font-size:14px}
@@ -140,17 +148,47 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#tip">Daily tip</a><a href="#lib">Programs</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
+<nav><div class="wrap"><b>Nathaniel P. Nesakumar</b><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero" id="top">
 <canvas id="net" aria-hidden="true"></canvas>
 <div class="wrap">
+<p class="hi" id="hi"></p>
 <span class="pill">Learning, talent and organization development</span>
 <h1 aria-label="Capability building that moves the business."><span style="animation-delay:.15s">Capability</span> <span style="animation-delay:.27s">building</span> <span style="animation-delay:.39s">that</span> <span style="animation-delay:.51s">moves</span> <span style="animation-delay:.63s">the&nbsp;business.</span></h1>
 <p>Mechanical engineer turned learning leader. For 19+ years I have designed learning journeys, launched learning platforms and built talent pipelines across engineering, EPC and manufacturing, in six countries.</p>
 <div class="btns"><a class="btn p" href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Download resume</a><a class="btn" href="#impact">See the impact</a></div>
 </div>
 </header>
+
+<section id="tip" class="tipband"><div class="wrap">
+<div class="tipgrid">
+<div class="pugwrap"><svg class="pug" viewBox="0 0 260 270" role="img" aria-label="A friendly pug in glasses, dressed like a trainer with a whistle and clipboard">
+<ellipse cx="130" cy="262" rx="84" ry="7" fill="rgba(0,0,0,.18)"/>
+<path d="M44 262C44 205 78 186 130 186s86 19 86 76z" fill="#2f4bd8"/>
+<path d="M104 186l26 30 26-30-10-6-16 16-16-16z" fill="#fff"/>
+<path d="M112 190l18 36M148 190l-18 36" stroke="#f0c36b" stroke-width="4" stroke-linecap="round" fill="none"/>
+<rect x="119" y="224" width="24" height="15" rx="7" fill="#f0c36b" stroke="#b9801a" stroke-width="2"/><circle cx="125" cy="231" r="2.4" fill="#b9801a"/>
+<g transform="rotate(10 205 215)"><rect x="176" y="178" width="58" height="76" rx="7" fill="#fff" stroke="#1b1f3a" stroke-width="3"/><rect x="194" y="172" width="22" height="12" rx="4" fill="#1b1f3a"/><path d="M186 202h38M186 216h38M186 230h26" stroke="#7c93ff" stroke-width="4" stroke-linecap="round"/><path d="M186 244l6 6 12-12" stroke="#2a9d5c" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M58 70C30 64 24 112 50 134c10-14 14-40 8-64z" fill="#2b2320"/><path d="M202 70c28-6 34 42 8 64-10-14-14-40-8-64z" fill="#2b2320"/>
+<ellipse cx="130" cy="118" rx="80" ry="72" fill="#e8c28a"/>
+<path d="M104 68q26-12 52 0M110 80q20-9 40 0M118 91q12-6 24 0" stroke="#c79f64" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<ellipse cx="130" cy="150" rx="46" ry="36" fill="#2b2320"/>
+<ellipse cx="130" cy="134" rx="15" ry="10" fill="#0f0b0a"/><ellipse cx="125" cy="131" rx="4" ry="2.4" fill="#fff" opacity=".5"/>
+<path d="M130 144v8M116 158q14 14 28 0" stroke="#e8c28a" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M124 160q6 14 12 0z" fill="#ef7f8e"/>
+<circle cx="97" cy="108" r="12" fill="#1b1220"/><circle cx="163" cy="108" r="12" fill="#1b1220"/><circle cx="101" cy="104" r="4" fill="#fff"/><circle cx="167" cy="104" r="4" fill="#fff"/>
+<g fill="rgba(255,255,255,.28)" stroke="#1b1f3a" stroke-width="5"><circle cx="97" cy="108" r="27"/><circle cx="163" cy="108" r="27"/></g>
+<path d="M124 106q6-7 12 0M70 104L56 100M190 104l14-4" stroke="#1b1f3a" stroke-width="5" fill="none" stroke-linecap="round"/>
+</svg></div>
+<div class="tc">
+<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span></div>
+<p class="tx" id="ttext" aria-live="polite"></p>
+<div class="ta"><button class="btn" id="tprev" type="button">Previous day</button><button class="btn" id="ttoday" type="button">Today</button><button class="btn" id="tnext" type="button">Next day</button><button class="btn p" id="tcopy" type="button">Copy tip</button></div>
+</div>
+</div>
+</div></section>
+
 
 <section id="impact"><div class="wrap">
 <h2 class="h2">Impact, in numbers.</h2>
@@ -183,16 +221,6 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <p class="sub">Choose a discipline to see what sits behind it.</p>
 <div class="xp"><div class="xl" id="xl" role="tablist"></div><div class="xr" id="xr" role="tabpanel" aria-live="polite"></div></div>
 <div class="mq" aria-label="Platforms and tools"><div id="mq"></div></div>
-</div></section>
-
-<section id="tip" class="tipband"><div class="wrap">
-<h2 class="h2">An L&amp;D tip for every day.</h2>
-<p class="sub">A new idea each day of the year, from needs analysis to measuring impact.</p>
-<div class="tc">
-<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span></div>
-<p class="tx" id="ttext" aria-live="polite"></p>
-<div class="ta"><button class="btn" id="tprev" type="button">Previous day</button><button class="btn" id="ttoday" type="button">Today</button><button class="btn" id="tnext" type="button">Next day</button><button class="btn p" id="tcopy" type="button">Copy tip</button></div>
-</div>
 </div></section>
 
 <section id="lib" class="alt"><div class="wrap">
@@ -248,7 +276,7 @@ requestAnimationFrame(f)})},{threshold:.5});
 document.querySelectorAll("[data-n]").forEach(function(e){io.observe(e)});
 /* career */
 var R=[
-["Jun 2025","Present","A diversified engineering group","Head, Learning and Development","Middle East",["Lead group L&D strategy across engineering, EPC, manufacturing and project businesses","Run safety, compliance, technical and leadership programs with approved vendors","Measure training effectiveness and ROI, and manage budgets, vendors and audit readiness"]],
+["Jun 2025","Present","NBTC Group","Head, Learning and Development","Kuwait",["Lead group L&D strategy across engineering, EPC, manufacturing and project businesses","Run safety, compliance, technical and leadership programs with approved vendors","Measure training effectiveness and ROI, and manage budgets, vendors and audit readiness"]],
 ["Oct 2024","May 2025","Watertec","AGM, Learning and Development","Coimbatore",["Led L&D strategy and digitisation for a building materials manufacturer","Implemented an LMS and digitised sales training with SCORM","Storyboarded training videos for 300+ products"]],
 ["Jun 2024","Oct 2024","PGP Glass","AGM, Learning and Development","Surat",["Project-managed Great Place to Work: rank 40 (2023–24), then rank 39 (2024–25)","Ran the engagement survey and designed OD interventions","Linked practices to values, mission, vision and DEI"]],
 ["Jun 2021","Jun 2024","Aarti Industries","Senior Manager, Capability Building","Vadodara",["Led an LMS (Enthrall/Disprz) rollout for 2,000+ employees as program manager","Built a Center of Excellence model and a competency framework","Trained 5,250 people for 42,000 man-hours"]],
@@ -268,10 +296,10 @@ evs[0].classList.add("open");evs[0].setAttribute("aria-expanded","true");
 function sc(){var r=tl.getBoundingClientRect(),y=innerHeight*.55;$("prog").style.height=Math.max(0,Math.min(r.height,y-r.top))+"px";evs.forEach(function(e){e.classList.toggle("on",e.getBoundingClientRect().top<y)})}
 addEventListener("scroll",sc,{passive:true});sc();
 /* expertise */
-var CAP=[["Learning and development","Programs that close real capability gaps.","5,250+ people trained, 42,000+ hours","Now at NBTC Group: leading group-wide L&D across engineering, EPC, manufacturing and project businesses.",["Instructional design","ADDIE model","Content development","Learning journeys","Curriculum design","e-Learning","Train-the-trainer","Training delivery"]],
-["HR transformation","Systems that make people processes measurable.","LMS live for 2,000+ employees","Now at NBTC Group: learning governance, training ROI measurement and audit readiness.",["LMS implementation","Performance management","Competency frameworks","Employee engagement","GPTW","Gallup","Business requirements"]],
-["Talent management","From first interview to succession.","2,000+ hired, 2,200+ trainees inducted","Now at NBTC Group: supporting talent development, succession and internal mobility with HR.",["End-to-end recruitment","Onboarding","Succession planning","Assessment centres","Psychometrics","Culture-fit interviews"]],
-["Organization development","Culture and teams that lift performance.","HPWS at Ashok Leyland and TAFE","Now at NBTC Group: working with senior leaders to close capability gaps through annual learning roadmaps.",["High-performance work systems","Team building","Change management","Employee branding","KRA and KPI design","LEAN","Balanced scorecard"]]];
+var CAP=[["Learning and development","Programs that close real capability gaps.","5,250+ people trained, 42,000+ hours","Now at NBTC Group, Kuwait: leading group-wide L&D across engineering, EPC, manufacturing and project businesses.",["Instructional design","ADDIE model","Content development","Learning journeys","Curriculum design","e-Learning","Train-the-trainer","Training delivery"]],
+["HR transformation","Systems that make people processes measurable.","LMS live for 2,000+ employees","Now at NBTC Group, Kuwait: learning governance, training ROI measurement and audit readiness.",["LMS implementation","Performance management","Competency frameworks","Employee engagement","GPTW","Gallup","Business requirements"]],
+["Talent management","From first interview to succession.","2,000+ hired, 2,200+ trainees inducted","Now at NBTC Group, Kuwait: supporting talent development, succession and internal mobility with HR.",["End-to-end recruitment","Onboarding","Succession planning","Assessment centres","Psychometrics","Culture-fit interviews"]],
+["Organization development","Culture and teams that lift performance.","HPWS at Ashok Leyland and TAFE","Now at NBTC Group, Kuwait: working with senior leaders to close capability gaps through annual learning roadmaps.",["High-performance work systems","Team building","Change management","Employee branding","KRA and KPI design","LEAN","Balanced scorecard"]]];
 function xs(i){var c=CAP[i];document.querySelectorAll("#xl button").forEach(function(b,j){b.setAttribute("aria-selected",j===i)});
 $("xr").innerHTML="<h3>"+c[1]+"</h3><div class='pf'>"+c[2]+"</div><p class='now'>"+c[3]+"</p><div class='chips'>"+c[4].map(function(s,k){return"<span style='animation-delay:"+(k*55)+"ms'>"+s+"</span>"}).join("")+"</div>"}
 CAP.forEach(function(c,i){var b=mk("button","",c[0]);b.setAttribute("role","tab");b.onclick=function(){xs(i)};b.onmouseenter=function(){if(matchMedia("(hover:hover)").matches)xs(i)};$("xl").appendChild(b)});xs(0);
@@ -284,6 +312,7 @@ x.textContent=t;x.classList.remove("sw1");void x.offsetWidth;x.classList.add("sw
 $("tprev").onclick=function(){tv.setDate(tv.getDate()-1);tip()};$("tnext").onclick=function(){tv.setDate(tv.getDate()+1);tip()};$("ttoday").onclick=function(){tv=new Date();tip()};
 $("tcopy").onclick=function(){var b=$("tcopy"),t=$("ttext").textContent+" (Nathaniel P. Nesakumar, L&D tip of the day)";if(navigator.clipboard){navigator.clipboard.writeText(t);b.textContent="Copied";setTimeout(function(){b.textContent="Copy tip"},1600)}};
 tip();
+(function(){var h=new Date().getHours();$("hi").textContent=(h<12?"Good morning":h<17?"Good afternoon":"Good evening")+", and welcome."})();
 /* library */
 var L=[["Behavioural","Getting Things Done","David Allen"],["Behavioural","Crucial Conversations","VitalSmarts"],["Behavioural","Atomic Habits","James Clear"],["Behavioural","Personality Plus","Florence Littauer"],["Behavioural","The Coaching Habit","Michael Bungay Stanier"],["Behavioural","Transformed Temperament","Tim LaHaye"],["Behavioural","Blackbox Thinking","Matthew Syed"],["Behavioural","Power of Your Subconscious Mind","Joseph Murphy"],["Behavioural","Storytelling","HRCP Knowledge Body"],["Behavioural","Behavioral Event Interviewing","HRCP Knowledge Body"],
 ["Technical","Engineering Drawing and Symbols","Technical"],["Technical","Sales Force Automation","Software training"],["Technical","RESPECT Call Process","Process training"],["Technical","Disprz LMS","Users and administrators"],["Technical","300+ product videos","Building materials"],["Technical","The Psychology of Selling","Bite-sized modules"],
