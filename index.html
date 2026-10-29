@@ -32,7 +32,7 @@ h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-
 a{color:inherit}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--a),#8a5cf6);z-index:60}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:24px;height:64px}
+nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
 nav .brand{font:700 19px "Bricolage Grotesque",sans-serif;margin-right:auto;letter-spacing:-.02em;color:var(--ink)}
 nav a{color:var(--mute);text-decoration:none;font-size:15px;font-weight:500}
 nav a:hover{color:var(--ink)}
@@ -184,9 +184,9 @@ section{padding:96px 0;position:relative}
 .hbub{position:absolute;z-index:3;bottom:calc(100% - 6px);left:50%;margin-left:-110px;width:220px;text-align:center;padding:10px 18px;border-radius:22px;background:var(--ink);color:var(--bg);font:600 25px/1.1 "Caveat",cursive,sans-serif;opacity:0;animation:rise .6s 1.6s cubic-bezier(.2,.8,.2,1) forwards;transform:translateY(12px)}
 .hbub::after{content:"";position:absolute;left:50%;margin-left:-9px;bottom:-9px;width:18px;height:18px;background:var(--ink);transform:rotate(45deg)}
 @media(max-width:859px){.hero .wrap{display:block}.hpwrap{display:none}.hero h1{font-size:clamp(46px,11vw,84px)}}
-.alt::before,#cap::before,#cred::before,.ct::before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:0;pointer-events:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px}
+.alt::before,#cap::before,#cred::before,.ct::before,.play::before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:0;pointer-events:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px}
 .alt::before{background:var(--bg2)}
-#cap::before,#cred::before,.ct::before{background:var(--bg)}
+#cap::before,#cred::before,.ct::before,.play::before{background:var(--bg)}
 .imp .nt{display:block;margin-top:14px;font:600 23px/1.1 "Caveat",cursive,sans-serif;color:var(--g);transform:rotate(-2.5deg);transform-origin:left}
 .imp .nt::before{content:"\2196\00a0"}
 #guide{display:none;position:fixed;right:12px;bottom:calc(36px + env(safe-area-inset-bottom,0px));z-index:75;align-items:flex-end;gap:8px;pointer-events:none;transform:translateY(160%);opacity:0;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .3s}
@@ -194,6 +194,34 @@ section{padding:96px 0;position:relative}
 #gb{max-width:190px;padding:8px 14px;border-radius:16px;background:var(--ink);color:var(--bg);font:600 21px/1.1 "Caveat",cursive,sans-serif;margin-bottom:14px}
 #gimg{width:54px;height:auto;filter:drop-shadow(0 5px 7px rgba(0,0,0,.3))}
 html:not(.fine) #guide{display:flex}
+/* play zone */
+.play{--bg:#070b1c;--bg2:#0c1230;--ink:#eef1ff;--mute:#9aa6d6;--line:rgba(170,185,255,.2);--a:#7c93ff;--g:#f0c36b;--soft:rgba(124,147,255,.14);background:radial-gradient(70% 60% at 85% 0%,rgba(124,147,255,.2),transparent 60%),var(--bg);color:var(--ink)}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px}
+.pn2{border:1px solid var(--line);border-radius:28px;padding:clamp(22px,3.4vw,38px);background:linear-gradient(160deg,var(--soft),transparent 60%)}
+.pn2 h3{font-size:clamp(26px,3vw,36px);margin:4px 0 14px}
+.pn2 .kk{color:var(--g);font-weight:600;font-size:14px}
+.qo{display:block;width:100%;text-align:left;margin-top:10px;padding:14px 18px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--ink);font:500 16px "DM Sans",sans-serif;cursor:pointer;transition:.2s}
+.qo:hover{border-color:var(--a);background:var(--soft);transform:translateX(4px)}
+.qm{color:var(--mute);font-size:14px}
+.qq{font:600 clamp(20px,2.4vw,26px)/1.2 "Bricolage Grotesque",sans-serif;margin:6px 0 4px}
+.qb{height:4px;border-radius:4px;background:var(--line);margin:10px 0 14px;overflow:hidden}.qb i{display:block;height:100%;background:linear-gradient(90deg,var(--g),var(--a));transition:width .4s}
+.qr h4{font:700 clamp(32px,4.2vw,46px)/1.05 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:4px 0 10px;background:linear-gradient(135deg,#fff,var(--g));-webkit-background-clip:text;background-clip:text;color:transparent}
+.qr p{color:var(--mute);margin:0 0 18px}
+.qa{display:flex;gap:10px;flex-wrap:wrap}
+.qa .btn{padding:11px 20px;font-size:14px}
+.f{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0 0 18px}
+.f label{display:block;font-size:14px;color:var(--mute);margin-bottom:5px}
+.f input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:500 17px "DM Sans",sans-serif}
+.ro{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.ro div{background:var(--bg);padding:16px 18px}
+.ro b{display:block;font:700 clamp(26px,3vw,34px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.ro span{font-size:13px;color:var(--mute)}
+.rn2{color:var(--mute);font-size:14px;margin:14px 0 0}
+.tt.st{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.hero h1 i{display:inline-block;font-style:normal;transition:transform .15s ease-out}
+.rn{position:fixed;top:-90px;z-index:90;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(120vh) rotate(var(--rot,300deg))}}
+@media(max-width:560px){.f{grid-template-columns:1fr}}
 /* contact */
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
@@ -228,7 +256,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><a class="brand keep" href="#top" aria-label="Back to the top of the page">Nathaniel P. Nesakumar</a><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#intern">Freshers</a><a href="#cred">Credentials</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
+<nav><div class="wrap"><a class="brand keep" href="#top" aria-label="Back to the top of the page">Nathaniel P. Nesakumar</a><a href="#tip">Daily tip</a><a href="#impact">Impact</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#lib">Programs</a><a href="#intern">Freshers</a><a href="#cred">Credentials</a><a href="#play">Play</a><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
 
 <header class="hero" id="top">
 <canvas id="net" aria-hidden="true"></canvas>
@@ -256,7 +284,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <p class="pug-hint">Tap me to hear your tip 🐾</p>
 </div>
 <div class="tc">
-<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span></div>
+<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span><span class="tt st" id="tstreak" hidden></span></div>
 <p class="tx" id="ttext" aria-live="polite"></p>
 <div class="ta"><button class="btn" id="tprev" type="button">Previous day</button><button class="btn" id="ttoday" type="button">Today</button><button class="btn" id="tnext" type="button">Next day</button><button class="btn p" id="tcopy" type="button">Copy tip</button></div>
 </div>
@@ -308,6 +336,18 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <h2 class="h2">Certified and continually learning.</h2>
 <p class="sub">Credentials from HRCI, FMC University Singapore, the University of Minnesota and Anna University.</p>
 <div class="cr" id="crg"></div>
+</div></section>
+
+<section id="play" class="play"><div class="wrap">
+<h2 class="h2">Try something fun.</h2>
+<p class="sub">Two small experiments from the world of learning and development. Take the quiz, then run your own numbers.</p>
+<div class="pg">
+<div class="pn2"><span class="kk">Quick quiz</span><h3>Which L&amp;D superpower are you?</h3><div class="qz" id="qz"></div></div>
+<div class="pn2"><span class="kk">Calculator</span><h3>Does your training pay off?</h3>
+<div class="f"><div><label for="r1">Participants</label><input id="r1" type="number" min="0" value="50" inputmode="numeric"></div><div><label for="r2">Hours per person</label><input id="r2" type="number" min="0" value="8" inputmode="numeric"></div><div><label for="r3">Total program cost</label><input id="r3" type="number" min="0" value="150000" inputmode="numeric"></div><div><label for="r4">Benefit per person</label><input id="r4" type="number" min="0" value="6000" inputmode="numeric"></div></div>
+<div class="ro"><div><b id="o1">0%</b><span>ROI</span></div><div><b id="o2">0</b><span>net benefit</span></div><div><b id="o3">0</b><span>benefit-cost ratio</span></div><div><b id="o4">0</b><span>cost per learner-hour</span></div></div>
+<p class="rn2" id="rnote"></p></div>
+</div>
 </div></section>
 
 <section id="intern" class="alt"><div class="wrap">
@@ -439,11 +479,37 @@ c:function(){return["https:","","curiasity.com","instructorDetails","18","NBTC"]
 w:function(){return"https://wa.me/"+["91","9043","010788"].join("")}};
 document.querySelectorAll(".ic button").forEach(function(b){b.onclick=function(){var u=P[b.dataset.k]();if(b.dataset.k==="m")location.href=u;else window.open(u,"_blank","noopener")}});
 $("shr").onclick=function(){var d={title:document.title,url:location.href};if(navigator.share)navigator.share(d).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(d.url);$("shr").textContent="Link copied"}};
+/* quiz, roi calculator, streak */
+var QS=[["Your team has a new skill gap. First move?",["Design a short learning path","Check what data and tools we already have","Find who has the skill, or hire for it","Ask the team what is holding them back"]],
+["Your ideal Friday afternoon?",["Finishing a workshop storyboard","Automating a boring report","Interviewing someone impressive","Honest chat over team tea"]],
+["Pick your favourite tool.",["A storyboard","A dashboard","An interview scorecard","A pulse survey"]],
+["People say you are…",["A brilliant explainer","Wonderfully organised","A good judge of people","The glue of the team"]],
+["Success looks like…",["People can do something new","Everything runs smoothly and is measured","The right people in the right roles","People enjoy coming to work"]]],
+RS=[["The Learning Designer","You turn complex ideas into experiences people remember. Instructional design, microlearning and storytelling are your home turf.",1],
+["The Systems Builder","You make people processes work at scale: LMS rollouts, KRAs and KPIs, dashboards and clean data.",4],
+["The Talent Scout","You spot potential early and build pipelines: hiring, onboarding, succession and mentoring.",3],
+["The Culture Shaper","You lift whole teams through engagement, change and high-performance ways of working.",2]],qi=0,qs=[0,0,0,0];
+function qz(){var z=$("qz");z.innerHTML="";if(qi>=QS.length){var w=qs.indexOf(Math.max.apply(null,qs)),r=RS[w];
+z.innerHTML="<div class='qr'><span class='qm'>Your result</span><h4>"+r[0]+"</h4><p>"+r[1]+"</p><div class='qa'></div></div>";var a=z.querySelector(".qa");
+var b1=mk("button","btn p","See projects for you");b1.type="button";b1.onclick=function(){document.querySelectorAll("#ptabs .tab")[r[2]].click();$("intern").scrollIntoView({behavior:red?"auto":"smooth"})};
+var b2=mk("button","btn","Share my result");b2.type="button";b2.onclick=function(){var t="I’m "+r[0]+"! Find your L&D superpower: "+location.origin+location.pathname+"#play";if(navigator.share)navigator.share({title:"My L&D superpower",text:t}).catch(function(){});else if(navigator.clipboard){navigator.clipboard.writeText(t);b2.textContent="Copied"}};
+var b3=mk("button","btn","Take it again");b3.type="button";b3.onclick=function(){qi=0;qs=[0,0,0,0];qz()};a.appendChild(b1);a.appendChild(b2);a.appendChild(b3);return}
+var q=QS[qi];z.innerHTML="<span class='qm'>Question "+(qi+1)+" of "+QS.length+"</span><div class='qb'><i style='width:"+(qi/QS.length*100)+"%'></i></div><p class='qq'>"+q[0]+"</p>";
+q[1].forEach(function(o,k){var b=mk("button","qo",o);b.type="button";b.onclick=function(){qs[k]++;qi++;qz()};z.appendChild(b)})}qz();
+function roi(){var n=+$("r1").value||0,h=+$("r2").value||0,c=+$("r3").value||0,b=+$("r4").value||0,ben=n*b,net=ben-c,f=function(x){return Math.round(x).toLocaleString("en-US")};
+$("o1").textContent=c>0?Math.round(net/c*100)+"%":"n/a";$("o2").textContent=f(net);$("o3").textContent=c>0?(ben/c).toFixed(2)+" : 1":"n/a";$("o4").textContent=n*h>0?f(c/(n*h)):"n/a";
+$("rnote").textContent=c<=0?"Enter a program cost to see the return.":net<0?"Below break-even. Check the benefit per person, or look at ways to lower the cost.":"ROI = (benefits − costs) ÷ costs × 100. Use conservative numbers and count only the benefit that training itself caused."}
+["r1","r2","r3","r4"].forEach(function(i){$(i).addEventListener("input",roi)});roi();
+(function(){try{var d=new Date(),k=function(x){return x.getFullYear()+"-"+(x.getMonth()+1)+"-"+x.getDate()},t=k(d),y=new Date(d.getTime()-864e5),st=JSON.parse(localStorage.getItem("ldstreak")||"{}");
+if(st.last!==t){st.n=(st.last===k(y)?(st.n||0)+1:1);st.last=t;localStorage.setItem("ldstreak",JSON.stringify(st))}
+var e=$("tstreak");e.textContent=st.n>1?"🔥 Day "+st.n+" learning streak":"🔥 Streak started. Come back tomorrow!";e.title="Visit on consecutive days to grow your streak";e.hidden=false}catch(x){}})();
 /* hero pug and scroll story */
 var sayFn=null;
-(function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,L=["Woof! Welcome to my portfolio.","Scroll down. I’ll be your guide.","Don’t miss today’s tip below!","Hire my human! 🐾"];
+(function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,cc=0,L=["Woof! Welcome to my portfolio.","Scroll down. I’ll be your guide.","Don’t miss today’s tip below!","Hire my human! 🐾"];
 $("hpimg").src=document.querySelector(".pug-photo").src;
-hp.onclick=function(){i=(i+1)%L.length;hb.textContent=L[i];hp.classList.remove("hop");void hp.offsetWidth;hp.classList.add("hop");setTimeout(function(){hp.classList.remove("hop")},650)};
+function rain(){if(red){hb.textContent="Woof woof woof!";return}var src=$("buddy").src;for(var n=0;n<24;n++){var im=document.createElement("img");im.className="rn";im.alt="";im.src=src;var w=34+Math.random()*34;im.style.cssText="left:"+(Math.random()*96)+"%;width:"+w+"px;animation-duration:"+(2.4+Math.random()*2)+"s;animation-delay:"+(Math.random()*.9)+"s;--rot:"+(Math.random()<.5?-1:1)*(180+Math.random()*240)+"deg";document.body.appendChild(im);(function(x){setTimeout(function(){x.remove()},5600)})(im)}}
+var kb="";addEventListener("keydown",function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName))return;kb=(kb+e.key.toLowerCase()).slice(-4);if(kb==="woof"){kb="";rain()}});
+hp.onclick=function(){if(++cc>=5){cc=0;rain()}i=(i+1)%L.length;hb.textContent=L[i];hp.classList.remove("hop");void hp.offsetWidth;hp.classList.add("hop");setTimeout(function(){hp.classList.remove("hop")},650)};
 function hs(){hp.style.setProperty("--hs",red?0:Math.min(1,scrollY/(hero.offsetHeight*.75)))}
 addEventListener("scroll",hs,{passive:true});hs()})();
 /* cursor interactions: glow, pug buddy, pug tilt, magnetic buttons, spotlight cells */
@@ -468,11 +534,13 @@ addEventListener("pointerdown",function(){if(!on)return;sy.textContent="Woof!";s
 document.querySelectorAll(".imp>div").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();c.style.setProperty("--x",(e.clientX-r.left)+"px");c.style.setProperty("--y",(e.clientY-r.top)+"px")})});
 document.querySelectorAll(".btn,.ic button").forEach(function(el){el.classList.add("mag");
  el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect();el.style.transform="translate("+((e.clientX-r.left-r.width/2)*.22)+"px,"+((e.clientY-r.top-r.height/2)*.28)+"px)"});
- el.addEventListener("pointerleave",function(){el.style.transform=""})})})();
+ el.addEventListener("pointerleave",function(){el.style.transform=""})});
+var LT=[];document.querySelectorAll(".hero h1 span").forEach(function(w){var t=w.textContent;w.textContent="";t.split("").forEach(function(c){var l=document.createElement("i");l.textContent=c;w.appendChild(l);LT.push(l)})});
+var rt=0;addEventListener("pointermove",function(){if(rt||scrollY>innerHeight)return;rt=requestAnimationFrame(function(){rt=0;LT.forEach(function(l){var r=l.getBoundingClientRect(),d=Math.hypot(m.x-(r.left+r.width/2),m.y-(r.top+r.height/2)),k=d<150?1-d/150:0;l.style.transform=k?"translateY("+(-k*16)+"px) scale("+(1+k*.1)+")":""})})})})();
 /* the pug guide comments as you scroll (bubble by the cursor pug on desktop, corner pug on touch screens) */
 if(!document.documentElement.classList.contains("fine")){var gd=$("guide"),gb=$("gb"),gt=0;$("gimg").src=$("buddy").src;
 sayFn=function(m){gb.textContent=m;gd.classList.add("on");clearTimeout(gt);gt=setTimeout(function(){gd.classList.remove("on")},3200)}}
-var MSG={tip:"Here’s today’s learning tip!",impact:"Numbers I’m proud of.",career:"My journey, role by role. Tap one!",cap:"Four disciplines. Pick one!",lib:"Programs I’ve built.",intern:"Freshers, start here!",cred:"Certified and still learning.",contact:"Say hello. Grab my resume!"},lastSay=0;
+var MSG={tip:"Here’s today’s learning tip!",impact:"Numbers I’m proud of.",career:"My journey, role by role. Tap one!",cap:"Four disciplines. Pick one!",lib:"Programs I’ve built.",intern:"Freshers, start here!",cred:"Certified and still learning.",play:"Try the quiz and the ROI calculator!",contact:"Say hello. Grab my resume!"},lastSay=0;
 var so=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting||!sayFn)return;var n=Date.now();if(n-lastSay<1200)return;lastSay=n;sayFn(MSG[en.target.id])})},{rootMargin:"-45% 0px -50% 0px"});
 Object.keys(MSG).forEach(function(k){var e=$(k);if(e)so.observe(e)});
 /* visitor analytics: paste your GoatCounter code (the part before .goatcounter.com) between the quotes */
