@@ -171,18 +171,22 @@ section{padding:96px 0;position:relative}
 .imp>div>*{position:relative}
 .mag{transition:transform .2s ease-out}
 /* scroll story */
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:30px;align-items:center}
-.hero h1{font-size:clamp(44px,6.4vw,84px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:30px;align-items:center}
+.hero h1{font-size:clamp(42px,5.4vw,72px)}.hero h1 span{white-space:nowrap}
 .hpwrap{position:relative;display:flex;justify-content:center}
 .hpwrap::before{content:"";position:absolute;inset:6% 0 0;border-radius:50%;background:radial-gradient(circle,var(--a),transparent 68%);opacity:.3;filter:blur(24px)}
-.hpug{position:relative;display:block;width:100%;max-width:330px;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;opacity:0;animation:pop .9s 1s cubic-bezier(.2,.9,.3,1.25) forwards;
+.hpug{position:relative;display:block;width:100%;max-width:440px;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;opacity:0;animation:pop .9s 1s cubic-bezier(.2,.9,.3,1.25) forwards;
  transform:translateY(calc(var(--hs,0)*70px)) perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(calc(1 - var(--hs,0)*.18));transition:transform .18s ease-out}
-.hpug img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 20px rgba(0,0,0,.3));animation:pugIdle 4s ease-in-out infinite;transform-origin:50% 90%}
-.hpug.hop img{animation:hop .6s ease-out}
+.hpug>svg{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 20px rgba(0,0,0,.3));animation:pugIdle 4s ease-in-out infinite;transform-origin:50% 90%}
+.hpug.hop>svg{animation:hop .6s ease-out}
+.spin{animation:spin 1.6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.eng{animation:shake .12s linear infinite}
+@keyframes shake{50%{transform:translateY(-1.2px)}}
 @keyframes pop{from{opacity:0;margin-top:40px}to{opacity:1;margin-top:0}}
 @keyframes hop{30%{transform:translateY(-24px) scale(1.04)}65%{transform:translateY(0) scale(.98)}}
-.hbub{position:absolute;z-index:3;bottom:calc(100% - 6px);left:50%;margin-left:-110px;width:220px;text-align:center;padding:10px 18px;border-radius:22px;background:var(--ink);color:var(--bg);font:600 25px/1.1 "Caveat",cursive,sans-serif;opacity:0;animation:rise .6s 1.6s cubic-bezier(.2,.8,.2,1) forwards;transform:translateY(12px)}
-.hbub::after{content:"";position:absolute;left:50%;margin-left:-9px;bottom:-9px;width:18px;height:18px;background:var(--ink);transform:rotate(45deg)}
+.hbub{position:absolute;z-index:3;bottom:calc(100% + 4px);left:8%;width:220px;text-align:center;padding:10px 18px;border-radius:22px;background:var(--ink);color:var(--bg);font:600 25px/1.1 "Caveat",cursive,sans-serif;opacity:0;animation:rise .6s 1.6s cubic-bezier(.2,.8,.2,1) forwards;transform:translateY(12px)}
+.hbub::after{content:"";position:absolute;left:34%;margin-left:-9px;bottom:-9px;width:18px;height:18px;background:var(--ink);transform:rotate(45deg)}
 @media(max-width:859px){.hero .wrap{display:block}.hpwrap{display:none}.hero h1{font-size:clamp(46px,11vw,84px)}}
 .alt::before,#cap::before,#cred::before,.ct::before,.play::before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:0;pointer-events:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px}
 .alt::before{background:var(--bg2)}
@@ -268,7 +272,36 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <p>Mechanical engineer turned learning leader. For 19+ years I have designed learning journeys, launched learning platforms and built talent pipelines across engineering, EPC and manufacturing, in six countries.</p>
 <div class="btns"><a class="btn p" href="resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>Download resume</a><a class="btn" href="#impact">See the impact</a></div>
 </div>
-<div class="hpwrap"><div class="hbub" id="hbub">Woof! Welcome to my portfolio.</div><button class="hpug" id="hpug" type="button" aria-label="Say hello to the pug"><img id="hpimg" alt="" draggable="false" src="data:image/gif;base64,R0lGODlhAQABAAAAACw="></button></div>
+<div class="hpwrap"><div class="hbub" id="hbub">Woof! Welcome to my portfolio.</div><button class="hpug" id="hpug" type="button" aria-label="Tap the pug for a shower of dog bones"><svg viewBox="0 0 640 440" role="img" aria-label="The pug riding a classic cruiser motorcycle">
+<defs>
+<linearGradient id="tk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a3d"/><stop offset=".55" stop-color="#e0561b"/><stop offset="1" stop-color="#9c3410"/></linearGradient>
+<linearGradient id="ch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f6fb"/><stop offset=".5" stop-color="#aeb6c8"/><stop offset="1" stop-color="#e9edf5"/></linearGradient>
+<linearGradient id="fg" gradientUnits="userSpaceOnUse" x1="0" y1="188" x2="0" y2="254"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+<mask id="fade" maskUnits="userSpaceOnUse" x="20" y="0" width="340" height="270"><rect x="20" y="0" width="340" height="270" fill="url(#fg)"/></mask>
+<g id="wh"><circle r="70" fill="#14161d"/><circle r="52" fill="#262a36" stroke="url(#ch)" stroke-width="7"/><g class="spin"><path d="M-46 0H46M0-46V46M-33-33L33 33M-33 33L33-33" stroke="#aab2c4" stroke-width="2.5"/></g><circle r="11" fill="url(#ch)"/></g>
+</defs>
+<ellipse cx="320" cy="404" rx="270" ry="12" fill="rgba(0,0,0,.28)"/>
+<use href="#wh" x="150" y="330"/><use href="#wh" x="480" y="330"/>
+<path d="M84 318Q150 238 218 306" fill="none" stroke="url(#tk)" stroke-width="15" stroke-linecap="round"/>
+<path d="M150 330L300 318L330 262" stroke="#262a36" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M352 352Q250 372 98 366" stroke="url(#ch)" stroke-width="15" fill="none" stroke-linecap="round"/>
+<path d="M352 335Q250 352 108 350" stroke="#9aa3b6" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M480 330L440 196" stroke="url(#ch)" stroke-width="11" stroke-linecap="round"/>
+<path d="M492 326L452 192" stroke="#8d96aa" stroke-width="6" stroke-linecap="round"/>
+<path d="M418 300Q480 246 540 302" fill="none" stroke="url(#tk)" stroke-width="13" stroke-linecap="round"/>
+<g class="eng"><ellipse cx="322" cy="330" rx="58" ry="34" fill="#2d3240" stroke="url(#ch)" stroke-width="5"/>
+<g fill="#8b93a6" stroke="#cfd5e2" stroke-width="2"><rect x="286" y="262" width="30" height="66" rx="6" transform="rotate(-24 301 295)"/><rect x="330" y="262" width="30" height="66" rx="6" transform="rotate(24 345 295)"/></g>
+<path d="M283 276l30-8M286 290l30-8M289 304l30-8M361 276l-30-8M358 290l-30-8M355 304l-30-8" stroke="#555d71" stroke-width="3" stroke-linecap="round"/><circle cx="322" cy="332" r="14" fill="url(#ch)"/></g>
+<g mask="url(#fade)"><svg x="58" y="6" width="252" height="250" viewBox="0 0 524 520" overflow="hidden"><image id="hpimg" width="524" height="760"/></svg></g>
+<path d="M108 244Q165 220 238 232L246 252Q172 270 106 258Z" fill="#2a1b14" stroke="#4a3123" stroke-width="3"/>
+<path d="M122 247Q170 233 228 243" stroke="#8a6447" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+<path d="M232 226Q246 170 312 170Q372 172 398 206Q338 232 232 226Z" fill="url(#tk)" stroke="#7a2a0c" stroke-width="2"/>
+<path d="M262 190Q312 178 366 198" stroke="rgba(255,255,255,.55)" stroke-width="5" fill="none" stroke-linecap="round"/>
+<circle cx="470" cy="214" r="46" fill="rgba(255,240,170,.22)"/>
+<path d="M440 196Q432 150 392 146" stroke="url(#ch)" stroke-width="9" fill="none" stroke-linecap="round"/>
+<rect x="372" y="138" width="28" height="14" rx="7" fill="#14161d" transform="rotate(-14 386 145)"/>
+<circle cx="458" cy="214" r="25" fill="#fff8d6" stroke="url(#ch)" stroke-width="7"/><circle cx="458" cy="214" r="11" fill="#fff"/>
+</svg></button></div>
 </div>
 </header>
 
@@ -505,11 +538,13 @@ if(st.last!==t){st.n=(st.last===k(y)?(st.n||0)+1:1);st.last=t;localStorage.setIt
 var e=$("tstreak");e.textContent=st.n>1?"🔥 Day "+st.n+" learning streak":"🔥 Streak started. Come back tomorrow!";e.title="Visit on consecutive days to grow your streak";e.hidden=false}catch(x){}})();
 /* hero pug and scroll story */
 var sayFn=null;
-(function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,cc=0,L=["Woof! Welcome to my portfolio.","Scroll down. I’ll be your guide.","Don’t miss today’s tip below!","Hire my human! 🐾"];
-$("hpimg").src=document.querySelector(".pug-photo").src;
+(function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,L=["Woof! Let’s ride through my portfolio.","Again! Again! I have plenty of bones.","Born to ride, built to train.","Hire my human! 🐾"];
+$("hpimg").setAttribute("href",document.querySelector(".pug-photo").src);
 function rain(){if(red){hb.textContent="Woof woof woof!";return}var src=$("buddy").src;for(var n=0;n<24;n++){var im=document.createElement("img");im.className="rn";im.alt="";im.src=src;var w=34+Math.random()*34;im.style.cssText="left:"+(Math.random()*96)+"%;width:"+w+"px;animation-duration:"+(2.4+Math.random()*2)+"s;animation-delay:"+(Math.random()*.9)+"s;--rot:"+(Math.random()<.5?-1:1)*(180+Math.random()*240)+"deg";document.body.appendChild(im);(function(x){setTimeout(function(){x.remove()},5600)})(im)}}
 var kb="";addEventListener("keydown",function(e){if(/INPUT|TEXTAREA/.test(e.target.tagName))return;kb=(kb+e.key.toLowerCase()).slice(-4);if(kb==="woof"){kb="";rain()}});
-hp.onclick=function(){if(++cc>=5){cc=0;rain()}i=(i+1)%L.length;hb.textContent=L[i];hp.classList.remove("hop");void hp.offsetWidth;hp.classList.add("hop");setTimeout(function(){hp.classList.remove("hop")},650)};
+var BONE="data:image/svg+xml,"+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><g fill='#f6efdc' stroke='#c4b48a' stroke-width='3'><rect x='22' y='12' width='56' height='16' rx='6'/><circle cx='20' cy='12' r='10'/><circle cx='20' cy='28' r='10'/><circle cx='80' cy='12' r='10'/><circle cx='80' cy='28' r='10'/></g><g fill='#f6efdc'><rect x='22' y='12' width='56' height='16' rx='6'/><circle cx='20' cy='12' r='9'/><circle cx='20' cy='28' r='9'/><circle cx='80' cy='12' r='9'/><circle cx='80' cy='28' r='9'/></g></svg>");
+function bones(){if(red||document.querySelectorAll(".rn").length>70)return;for(var n=0;n<28;n++){var im=document.createElement("img");im.className="rn";im.alt="";im.src=BONE;var w=30+Math.random()*30;im.style.cssText="left:"+(Math.random()*96)+"%;width:"+w+"px;animation-duration:"+(2.2+Math.random()*1.9)+"s;animation-delay:"+(Math.random()*.7)+"s;--rot:"+(Math.random()<.5?-1:1)*(160+Math.random()*260)+"deg";document.body.appendChild(im);(function(x){setTimeout(function(){x.remove()},5200)})(im)}}
+hp.onclick=function(){bones();i=(i+1)%L.length;hb.textContent=L[i];hp.classList.remove("hop");void hp.offsetWidth;hp.classList.add("hop");setTimeout(function(){hp.classList.remove("hop")},650)};
 function hs(){hp.style.setProperty("--hs",red?0:Math.min(1,scrollY/(hero.offsetHeight*.75)))}
 addEventListener("scroll",hs,{passive:true});hs()})();
 /* cursor interactions: glow, pug buddy, pug tilt, magnetic buttons, spotlight cells */
