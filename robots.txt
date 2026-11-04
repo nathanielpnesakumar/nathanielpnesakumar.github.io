@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nathanielpnesakumar.github.io/sitemap.xml
