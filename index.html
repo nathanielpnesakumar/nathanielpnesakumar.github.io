@@ -36,13 +36,6 @@ h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;margin:0;letter-
 :focus-visible{outline:2px solid var(--a);outline-offset:3px}
 a{color:inherit}
 #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--a),#8a5cf6);z-index:60}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
-nav .brand{font:700 19px "Bricolage Grotesque",sans-serif;margin-right:auto;letter-spacing:-.02em;color:var(--ink)}
-nav a{color:var(--mute);text-decoration:none;font-size:15px;font-weight:500}
-nav a:hover{color:var(--ink)}
-@media(max-width:720px){nav a:not(.keep){display:none}}
-#th{background:none;border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:5px 13px;font:500 13px "DM Sans";cursor:pointer}
 /* hero */
 .hero{position:relative;min-height:calc(100svh - 64px);display:flex;align-items:center;overflow:hidden;padding:70px 0 60px}
 #net{position:absolute;inset:0;width:100%;height:100%}
@@ -299,6 +292,42 @@ html:not(.fine) #guide{display:flex}
 .cta5 b{display:block;font:600 21px/1.15 "Bricolage Grotesque",sans-serif}
 .cta5 span{display:block;color:var(--mute);font-size:15px;margin:4px 0 12px}
 .cta5 .btn{padding:10px 18px;font-size:14px}
+/* left side panel */
+.topbar,.scrim{display:none}
+.side{position:fixed;left:0;top:0;bottom:0;width:236px;z-index:45;display:flex;flex-direction:column;gap:6px;padding:22px 14px 14px;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-right:1px solid var(--line);overflow-y:auto}
+.side .brand{display:block;text-decoration:none;color:var(--ink);padding:0 10px 12px;border-bottom:1px solid var(--line);margin-bottom:4px}
+.side .brand b{display:block;font:700 20px/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.side .brand span{display:block;margin-top:4px;font:600 13px "DM Sans",sans-serif;color:var(--g)}
+.side nav{display:flex;flex-direction:column;gap:2px;flex:1}
+.gl{margin:8px 0 0;padding:0 12px;font:600 12px "DM Sans",sans-serif;color:var(--mute);opacity:.8}
+.sl{position:relative;display:block;padding:5px 12px;border-radius:10px;color:var(--mute);text-decoration:none;font-size:14.5px;font-weight:500;transition:background .2s,color .2s}
+.sl:hover{color:var(--ink);background:var(--soft)}
+.sl.on{color:var(--ink);background:var(--soft);font-weight:600}
+.sl.on::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--g),var(--a))}
+.sb{display:flex;flex-direction:column;gap:8px;padding-top:10px;border-top:1px solid var(--line)}
+.side .btn{padding:11px 16px;font-size:14px;justify-content:center}
+#th{flex:1;background:none;border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:7px 13px;font:500 13px "DM Sans",sans-serif;cursor:pointer}
+.sr{display:flex;gap:8px;align-items:center}
+@media(max-height:780px){.sl{padding:3px 12px}.gl{margin:5px 0 0}.side .brand b{font-size:18px}.side{padding-top:16px}}
+.fine .side #bt,.fine .side #sd{position:static;display:inline-block;left:auto;bottom:auto;flex:none;padding:6px 10px}
+@media(min-width:1100px){
+body{padding-left:236px}
+html{scroll-padding-top:20px}
+.hero{min-height:100svh}
+}
+@media(max-width:1099px){
+html{scroll-padding-top:calc(68px + env(safe-area-inset-top,0px))}
+body{padding-top:56px}
+.hero{min-height:calc(100svh - 56px)}
+.topbar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:56px;z-index:46;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand2{font:700 18px "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+.mt{background:none;border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:7px 16px;font:600 14px "DM Sans",sans-serif;cursor:pointer}
+.side{top:calc(56px + env(safe-area-inset-top,0px));transform:translateX(-104%);transition:transform .3s cubic-bezier(.2,.8,.2,1);background:var(--bg);box-shadow:20px 0 40px -20px rgba(0,0,0,.35)}
+.scrim{position:fixed;inset:0;z-index:44;background:rgba(5,8,25,.45);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim{display:block}
+body.menu-open .side{transform:none}
+body.menu-open .scrim{opacity:1;pointer-events:auto}
+}
 /* contact */
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
@@ -334,7 +363,22 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </head>
 <body>
 <div id="bar"></div>
-<nav><div class="wrap"><a class="brand keep" href="#top" aria-label="Back to the top of the page">Nathaniel P. Nesakumar</a><a href="#impact">Impact</a><a href="#cases">Case studies</a><a href="#career">Journey</a><a href="#cap">Expertise</a><a href="#insights">Insights</a><a href="#resources">Resources</a><details class="more"><summary>More</summary><div class="mm"><a href="#intern">For freshers</a><a href="#cred">Credentials</a><a href="#play">Play</a><a href="#tip">Daily tip</a></div></details><a class="keep" href="#contact">Contact</a><button id="th" aria-label="Toggle light and dark theme">Theme</button></div></nav>
+<div class="topbar"><a class="brand2" href="#top">Nathaniel P. Nesakumar</a><button class="mt" id="mt" type="button" aria-label="Open the menu" aria-expanded="false" aria-controls="side">Menu</button></div>
+<div class="scrim" id="scrim"></div>
+<aside class="side" id="side" aria-label="Site navigation">
+<a class="brand" href="#top" aria-label="Back to the top of the page"><b>Nathaniel P. Nesakumar</b><span>The Capability Builder</span></a>
+<nav>
+<p class="gl">Start</p>
+<a class="sl" href="#top">Home</a><a class="sl" href="#tip">Daily tip</a><a class="sl" href="#impact">Impact</a>
+<p class="gl">My work</p>
+<a class="sl" href="#cases">Case studies</a><a class="sl" href="#career">Journey</a><a class="sl" href="#cap">Expertise</a><a class="sl" href="#insights">Insights</a>
+<p class="gl">Learn and play</p>
+<a class="sl" href="#resources">Resources</a><a class="sl" href="#lib">Programs</a><a class="sl" href="#play">Play</a><a class="sl" href="#intern">For freshers</a>
+<p class="gl">About</p>
+<a class="sl" href="#cred">Credentials</a><a class="sl" href="#contact">Contact</a>
+</nav>
+<div class="sb"><a class="btn p" href="resume.pdf" download>Download resume</a><div class="sr"><button id="th" type="button" aria-label="Toggle light and dark theme">Theme</button></div></div>
+</aside>
 
 <header class="hero" id="top">
 <canvas id="net" aria-hidden="true"></canvas>
@@ -550,7 +594,15 @@ if(!red)requestAnimationFrame(draw)}
 c.parentNode.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
 sz();draw();addEventListener("resize",function(){sz();if(red)draw()})})();
 /* name goes to the very top */
-document.querySelector(".brand").addEventListener("click",function(e){e.preventDefault();scrollTo({top:0,behavior:red?"auto":"smooth"});if(history.replaceState)history.replaceState(null,"",location.pathname+location.search)});
+document.querySelectorAll(".brand,.brand2").forEach(function(el){el.addEventListener("click",function(e){e.preventDefault();document.body.classList.remove("menu-open");scrollTo({top:0,behavior:red?"auto":"smooth"});if(history.replaceState)history.replaceState(null,"",location.pathname+location.search)})});
+/* side panel: highlight where you are, and the phone menu */
+var SL=[].slice.call(document.querySelectorAll(".side .sl")),SM={};SL.forEach(function(a){SM[a.getAttribute("href").slice(1)]=a;a.addEventListener("click",function(){document.body.classList.remove("menu-open");$("mt").setAttribute("aria-expanded","false")})});
+var sr=document.querySelector(".side .sr");if(sr){sr.appendChild($("bt"));sr.appendChild($("sd"))}
+var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;SL.forEach(function(a){a.classList.remove("on")});var a=SM[en.target.id];if(a)a.classList.add("on")})},{rootMargin:"-40% 0px -55% 0px"});
+Object.keys(SM).forEach(function(k){var e=$(k);if(e)spy.observe(e)});
+$("mt").onclick=function(){var o=document.body.classList.toggle("menu-open");$("mt").setAttribute("aria-expanded",o)};
+$("scrim").onclick=function(){document.body.classList.remove("menu-open");$("mt").setAttribute("aria-expanded","false")};
+addEventListener("keydown",function(e){if(e.key==="Escape")document.body.classList.remove("menu-open")});
 /* scroll progress */
 addEventListener("scroll",function(){var d=document.documentElement;$("bar").style.width=(scrollY/(d.scrollHeight-innerHeight)*100)+"%"},{passive:true});
 /* count-up */
