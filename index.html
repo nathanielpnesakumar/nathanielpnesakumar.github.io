@@ -299,6 +299,14 @@ html:not(.fine) #guide{display:flex}
 .side .brand b{display:block;font:700 20px/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
 .side .brand span{display:block;margin-top:4px;font:600 13px "DM Sans",sans-serif;color:var(--g)}
 .side nav{display:flex;flex-direction:column;gap:2px;flex:1}
+.gh{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:0;padding:8px 12px;margin-top:2px;border-radius:10px;color:var(--ink);font:600 14px "DM Sans",sans-serif;cursor:pointer;text-align:left;transition:background .2s,color .2s}
+.gh:hover{background:var(--soft)}
+.gh i{width:7px;height:7px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(-45deg);transition:transform .25s;margin-right:3px}
+.grp.open .gh i{transform:rotate(45deg)}
+.grp.has>.gh{color:var(--a)}
+.gb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.grp.open .gb{grid-template-rows:1fr}
+.gb>div{overflow:hidden;display:flex;flex-direction:column;gap:1px}
 .gl{margin:8px 0 0;padding:0 12px;font:600 12px "DM Sans",sans-serif;color:var(--mute);opacity:.8}
 .sl{position:relative;display:block;padding:5px 12px;border-radius:10px;color:var(--mute);text-decoration:none;font-size:14.5px;font-weight:500;transition:background .2s,color .2s}
 .sl:hover{color:var(--ink);background:var(--soft)}
@@ -368,14 +376,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <aside class="side" id="side" aria-label="Site navigation">
 <a class="brand" href="#top" aria-label="Back to the top of the page"><b>Nathaniel P. Nesakumar</b><span>The Capability Builder</span></a>
 <nav>
-<p class="gl">Start</p>
-<a class="sl" href="#top">Home</a><a class="sl" href="#tip">Daily tip</a><a class="sl" href="#impact">Impact</a>
-<p class="gl">My work</p>
-<a class="sl" href="#cases">Case studies</a><a class="sl" href="#career">Journey</a><a class="sl" href="#cap">Expertise</a><a class="sl" href="#insights">Insights</a>
-<p class="gl">Learn and play</p>
-<a class="sl" href="#resources">Resources</a><a class="sl" href="#lib">Programs</a><a class="sl" href="#play">Play</a><a class="sl" href="#intern">For freshers</a>
-<p class="gl">About</p>
-<a class="sl" href="#cred">Credentials</a><a class="sl" href="#contact">Contact</a>
+<div class="grp open"><button class="gh" type="button" aria-expanded="true">Start<i></i></button><div class="gb"><div><a class="sl" href="#top">Home</a><a class="sl" href="#tip">Daily tip</a><a class="sl" href="#impact">Impact</a></div></div></div>
+<div class="grp"><button class="gh" type="button" aria-expanded="false">My work<i></i></button><div class="gb"><div><a class="sl" href="#cases">Case studies</a><a class="sl" href="#career">Journey</a><a class="sl" href="#cap">Expertise</a><a class="sl" href="#insights">Insights</a></div></div></div>
+<div class="grp"><button class="gh" type="button" aria-expanded="false">Learn and play<i></i></button><div class="gb"><div><a class="sl" href="#resources">Resources</a><a class="sl" href="#lib">Programs</a><a class="sl" href="#play">Play</a><a class="sl" href="#intern">For freshers</a></div></div></div>
+<div class="grp"><button class="gh" type="button" aria-expanded="false">About<i></i></button><div class="gb"><div><a class="sl" href="#cred">Credentials</a><a class="sl" href="#contact">Contact</a></div></div></div>
 </nav>
 <div class="sb"><a class="btn p" href="resume.pdf" download>Download resume</a><div class="sr"><button id="th" type="button" aria-label="Toggle light and dark theme">Theme</button></div></div>
 </aside>
@@ -598,7 +602,9 @@ document.querySelectorAll(".brand,.brand2").forEach(function(el){el.addEventList
 /* side panel: highlight where you are, and the phone menu */
 var SL=[].slice.call(document.querySelectorAll(".side .sl")),SM={};SL.forEach(function(a){SM[a.getAttribute("href").slice(1)]=a;a.addEventListener("click",function(){document.body.classList.remove("menu-open");$("mt").setAttribute("aria-expanded","false")})});
 var sr=document.querySelector(".side .sr");if(sr){sr.appendChild($("bt"));sr.appendChild($("sd"))}
-var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;SL.forEach(function(a){a.classList.remove("on")});var a=SM[en.target.id];if(a)a.classList.add("on")})},{rootMargin:"-40% 0px -55% 0px"});
+var GR=[].slice.call(document.querySelectorAll(".grp"));
+GR.forEach(function(g){g.querySelector(".gh").addEventListener("click",function(){var o=g.classList.toggle("open");g.dataset.man=o?"1":"0";g.querySelector(".gh").setAttribute("aria-expanded",o)})});
+var spy=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;SL.forEach(function(a){a.classList.remove("on")});var a=SM[en.target.id];if(a){a.classList.add("on");var g=a.closest(".grp");GR.forEach(function(x){x.classList.remove("has");if(x!==g&&x.dataset.man!=="1"){x.classList.remove("open");x.querySelector(".gh").setAttribute("aria-expanded","false")}});g.classList.add("has","open");g.querySelector(".gh").setAttribute("aria-expanded","true")}})},{rootMargin:"-40% 0px -55% 0px"});
 Object.keys(SM).forEach(function(k){var e=$(k);if(e)spy.observe(e)});
 $("mt").onclick=function(){var o=document.body.classList.toggle("menu-open");$("mt").setAttribute("aria-expanded",o)};
 $("scrim").onclick=function(){document.body.classList.remove("menu-open");$("mt").setAttribute("aria-expanded","false")};
