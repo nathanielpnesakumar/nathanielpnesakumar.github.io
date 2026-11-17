@@ -365,9 +365,6 @@ html:not(.fine) .side #bt,html:not(.fine) .side #sd{display:inline-block;positio
 .f select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:500 17px "DM Sans",sans-serif}
 .rn2 b{color:var(--ink)}
 /* calmer motion, credentials feature, tidy */
-#glow{display:none!important}
-.hero h1 i,.mag{transform:none!important}
-.hpug .rp img{animation:none}
 .feat{display:flex;gap:30px;align-items:center;flex-wrap:wrap;border:1px solid var(--line);border-radius:26px;padding:26px 34px;margin:0 0 34px;background:linear-gradient(150deg,var(--soft),transparent 70%)}
 .feat b{display:block;font:700 clamp(44px,6vw,72px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;background:linear-gradient(135deg,var(--ink),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
 .feat .fk{color:var(--g);font-weight:600;font-size:14px}
@@ -479,6 +476,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <h2 class="h2">Four disciplines, one outcome.</h2>
 <p class="sub">Choose a discipline to see what sits behind it.</p>
 <div class="xp"><div class="xl" id="xl" role="tablist"></div><div class="xr" id="xr" role="tabpanel" aria-live="polite"></div></div>
+<div class="mq" aria-label="Platforms and tools"><div id="mq"></div></div>
 
 </div></section>
 
@@ -520,8 +518,9 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <h2 class="h2">Knowledge Hub.</h2>
 <p class="sub">Free templates, short notes, learning tools and project ideas for the HR and L&amp;D community.</p>
 <div class="rs">
-<article><span>Free to download</span><h3>Templates</h3><p>Competency mapping, annual L&amp;D calendar and a 30-60-90 day onboarding framework.</p><a class="btn" href="hub.html#resources">See the templates</a></article>
+<article><span>Free to download</span><h3>Templates and builders</h3><p>Competency, L&amp;D calendar and onboarding templates, plus a competency framework builder and a programme blueprint builder.</p><a class="btn" href="hub.html#resources">See the templates</a></article>
 <article><span>Short reads</span><h3>Notes from the field</h3><p>Practical notes on capability building, learning ROI, talent pipelines and HR transformation.</p><a class="btn" href="hub.html#insights">Read the notes</a></article>
+<article><span>For practitioners</span><h3>AI prompts and metrics</h3><p>Ten starter prompts for HR and L&amp;D work, a metrics dictionary, and decision practice scenarios.</p><a class="btn" href="hub.html#ai">Explore the tools</a></article>
 <article><span>For the community</span><h3>Project ideas for freshers</h3><p>Practical L&amp;D, OD, talent and HR projects, with a clear place for AI in each.</p><a class="btn" href="hub.html#intern">Explore the ideas</a></article>
 <article><span>For fun</span><h3>Daily tip, quiz and self-assessment</h3><p>A learning tip for every day of the year, a short quiz, and a ten-question L&amp;D maturity self-assessment.</p><a class="btn" href="hub.html#tip">Open the hub</a></article>
 </div>
@@ -685,6 +684,10 @@ var b2=mk("button","btn","Take it again");b2.type="button";b2.onclick=function()
 $("rdl").onclick=function(){var cur=($("rcur").value||"").trim()||"none",rows=[["Currency",cur],["Participants",$("r1").value],["Hours per person",$("r2").value],["Total programme cost",$("r3").value],["Benefit per person (estimate)",$("r4").value],["Share of benefit caused by training (%)",$("r5").value],["ROI",$("o1").textContent],["Net benefit",$("o2").textContent],["Benefit-cost ratio",$("o3").textContent],["Cost per learner-hour",$("o4").textContent]],t="Measure,Value\n"+rows.map(function(r){return r[0]+","+String(r[1]).replace(/,/g,"")}).join("\n")+"\nNote,ROI = (benefits - costs) / costs x 100. Benefits are estimates; count only the share caused by training.\n",bl=new Blob([t],{type:"text/csv"}),u=URL.createObjectURL(bl),a=document.createElement("a");a.href=u;a.download="training-roi-result.csv";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},500)};
 document.querySelectorAll(".mm a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").open=false})});
 document.addEventListener("click",function(e){var d=document.querySelector(".more");if(d&&d.open&&!d.contains(e.target))d.open=false});
+(function(){try{var d=new Date(),k=function(x){return x.getFullYear()+"-"+(x.getMonth()+1)+"-"+x.getDate()},t=k(d),y=new Date(d.getTime()-864e5),st=JSON.parse(localStorage.getItem("ldstreak")||"{}");
+if(st.last!==t){st.n=(st.last===k(y)?(st.n||0)+1:1);st.last=t;localStorage.setItem("ldstreak",JSON.stringify(st))}
+var e=$("tstreak");e.textContent=st.n>1?"🔥 Day "+st.n+" learning streak":"🔥 Streak started. Come back tomorrow!";e.title="Visit on consecutive days to grow your streak";e.hidden=false}catch(x){}})();
+var T=["SABA","Zobble","Disprz","Enthrall","CSOD","Coursera","Adobe Captivate","SCORM","DiSC","Storyboarding","ATS","PMS"];$("mq").innerHTML=T.concat(T).map(function(t){return"<span>"+t+"</span>"}).join("");
 /* hero pug and scroll story */
 var sayFn=null;
 (function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,L=["Hello! Let’s explore my portfolio.","Click again for more L&D acronyms!","Learn. Develop. Grow.","Let’s talk capability building."];

@@ -198,9 +198,9 @@ section{padding:96px 0;position:relative}
 .hbub{position:absolute;z-index:3;top:-98px;left:50%;margin-left:-86px;width:172px;text-align:center;padding:10px 18px;border-radius:22px;background:var(--ink);color:var(--bg);font:600 25px/1.1 "Caveat",cursive,sans-serif;opacity:0;animation:rise .6s 1.6s cubic-bezier(.2,.8,.2,1) forwards;transform:translateY(12px)}
 .hbub::after{content:"";position:absolute;left:50%;margin-left:-9px;bottom:-9px;width:18px;height:18px;background:var(--ink);transform:rotate(45deg)}
 @media(max-width:859px){.hero .wrap{display:block}.hpwrap{display:flex;margin-top:64px}.hbub{top:-60px;right:auto;left:6%;width:auto;max-width:240px;font-size:22px}.hero h1{font-size:clamp(32px,8.6vw,60px)}}
-.alt::before,#career::before,#cred::before,#insights::before,#lib::before,.ct::before,.play::before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:0;pointer-events:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px}
+.alt::before,#studio::before,#reference::before,#lib::before,.ct::before,.play::before{content:"";position:absolute;left:0;right:0;top:-17px;height:18px;z-index:0;pointer-events:none;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V10l10-4 10 5 12-7 13 6 13-5 12 7 14-6 14 5 12-8 14 6 14-4 12 7 14-6 12 5 10-4 14 4V18z'/%3E%3C/svg%3E") repeat-x 0 0/200px 18px}
 .alt::before{background:var(--bg2)}
-#career::before,#cred::before,#insights::before,#lib::before,.ct::before,.play::before{background:var(--bg)}
+#studio::before,#reference::before,#lib::before,.ct::before,.play::before{background:var(--bg)}
 .imp .nt{display:block;margin-top:14px;font:600 23px/1.1 "Caveat",cursive,sans-serif;color:var(--g);transform:rotate(-2.5deg);transform-origin:left}
 .imp .nt::before{content:"\2196\00a0"}
 #guide{display:none;position:fixed;right:12px;bottom:calc(36px + env(safe-area-inset-bottom,0px));z-index:75;align-items:flex-end;gap:8px;pointer-events:none;transform:translateY(160%);opacity:0;transition:transform .45s cubic-bezier(.2,.9,.3,1.2),opacity .3s}
@@ -365,13 +365,44 @@ html:not(.fine) .side #bt,html:not(.fine) .side #sd{display:inline-block;positio
 .f select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:500 17px "DM Sans",sans-serif}
 .rn2 b{color:var(--ink)}
 /* calmer motion, credentials feature, tidy */
-#glow{display:none!important}
-.hero h1 i,.mag{transform:none!important}
-.hpug .rp img{animation:none}
 .feat{display:flex;gap:30px;align-items:center;flex-wrap:wrap;border:1px solid var(--line);border-radius:26px;padding:26px 34px;margin:0 0 34px;background:linear-gradient(150deg,var(--soft),transparent 70%)}
 .feat b{display:block;font:700 clamp(44px,6vw,72px)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;background:linear-gradient(135deg,var(--ink),var(--a));-webkit-background-clip:text;background-clip:text;color:transparent}
 .feat .fk{color:var(--g);font-weight:600;font-size:14px}
 .feat p{margin:0;max-width:48ch;color:var(--mute)}
+/* hub tools */
+.tool{border:1px solid var(--line);border-radius:26px;padding:clamp(22px,3vw,38px);margin-bottom:28px;background:linear-gradient(160deg,var(--soft),transparent 60%)}
+.tool h3{font-size:clamp(24px,2.8vw,32px)}
+.tp{color:var(--mute);margin:6px 0 18px;max-width:64ch}
+.tool label.lb{display:block;font-size:14px;color:var(--mute);margin:14px 0 5px}
+.tool input[type=text],.tool textarea,.tool select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font:500 16px "DM Sans",sans-serif}
+.tool textarea{min-height:82px;resize:vertical}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0 28px}
+.chk{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip2{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:30px;padding:7px 14px;font-size:14.5px;cursor:pointer;background:var(--bg);color:var(--ink)}
+.chip2 input{accent-color:var(--a)}
+.chip2:has(input:checked){background:var(--soft);border-color:var(--a)}
+.mxw{overflow-x:auto;margin:16px 0}
+.mx{width:100%;border-collapse:collapse;font-size:14.5px}
+.mx th,.mx td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.mx th{background:var(--bg2);font-weight:600}
+.mx small{color:var(--mute)}
+.mx select{padding:6px 8px;width:auto}
+.ta{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.ta[hidden]{display:none}
+.bp{white-space:pre-wrap;font:500 14.5px/1.6 "DM Sans",sans-serif;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:16px;color:var(--ink)}
+.warn{border-left:3px solid var(--g);padding:12px 16px;background:var(--soft);border-radius:0 12px 12px 0;color:var(--mute);margin:0 0 24px}
+.warn b{color:var(--ink)}
+.ai{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px;margin-top:6px}
+.ac{border:1px solid var(--line);border-radius:20px;padding:22px;background:var(--bg)}
+.ac .kk{color:var(--g);font-weight:600;font-size:14px}
+.ac h3{font-size:22px;margin:4px 0 8px}
+.ac p{margin:6px 0;color:var(--mute);font-size:15.5px}
+.ac p b{color:var(--ink)}
+.pr{white-space:pre-wrap;font:500 14px/1.55 "DM Sans",sans-serif;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px;margin:10px 0;color:var(--ink)}
+.cb{margin-bottom:8px}
+.cb .btn{padding:8px 16px;font-size:14px}
+#md-q{width:100%;max-width:420px;padding:12px 16px;border-radius:30px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:500 16px "DM Sans",sans-serif;margin-bottom:22px}
+.fb{margin-top:12px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--soft);color:var(--ink);font-size:15.5px}
 /* contact */
 .ct{text-align:center;padding:110px 0 90px;background:radial-gradient(70% 90% at 50% 0%,var(--soft),transparent 70%)}
 .big{font-size:clamp(38px,7vw,88px);max-width:15ch;margin:0 auto;font-weight:700}
@@ -411,10 +442,10 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <div class="scrim" id="scrim"></div>
 <aside class="side" id="side" aria-label="Site navigation">
 <a class="brand" href="#top" aria-label="Back to the top of the page"><b>Nathaniel P. Nesakumar</b><span>The Capability Builder</span></a>
-<nav><a class="sl" href="#top">Knowledge Hub</a><a class="sl" href="#tip">Daily tip</a><a class="sl" href="#insights">Notes from the field</a><a class="sl" href="#resources">Templates and tools</a><a class="sl" href="#lib">Programmes</a><a class="sl" href="#play">L&amp;D quiz</a><a class="sl" href="#intern">For freshers</a><a class="sl" href="index.html">Back to portfolio</a></nav>
+<nav><a class="sl" href="#top">Knowledge Hub</a><a class="sl" href="#tip">Daily tip</a><a class="sl" href="#resources">Templates</a><a class="sl" href="#studio">Interactive Studio</a><a class="sl" href="#ai">AI prompt library</a><a class="sl" href="#reference">Metrics dictionary</a><a class="sl" href="#play">Practice and quiz</a><a class="sl" href="#insights">Notes from the field</a><a class="sl" href="#lib">Programmes</a><a class="sl" href="#intern">For freshers</a><a class="sl" href="index.html">Back to portfolio</a></nav>
 <div class="sb"><a class="btn p" href="index.html#contact">Let’s connect</a><a class="btn" href="resume.pdf" download>Download resume</a><button class="btn" type="button" data-k="l">LinkedIn profile</button><div class="sr"><button id="th" type="button" aria-label="Toggle light and dark theme">Theme</button></div></div>
 </aside>
-<header class="hubhead" id="top"><div class="wrap"><p class="stl">Knowledge Hub</p><h1 class="h2">Free tools and notes for the HR and L&amp;D community.</h1><p class="sub">Templates, short notes, project ideas for freshers, a daily learning tip and a quick quiz. Made by Nathaniel P. Nesakumar, The Capability Builder.</p><div class="btns" style="opacity:1;animation:none"><a class="btn p" href="index.html">Back to my portfolio</a><a class="btn" href="index.html#contact">Let’s connect</a></div></div></header>
+<header class="hubhead" id="top"><div class="wrap"><p class="stl">Knowledge Hub</p><h1 class="h2">Free tools and notes for the HR and L&amp;D community.</h1><p class="sub">Templates, builders you can download from, AI prompts, a metrics dictionary, decision practice, project ideas for freshers and a daily learning tip. Made by Nathaniel P. Nesakumar, The Capability Builder.</p><div class="btns" style="opacity:1;animation:none"><a class="btn p" href="index.html">Back to my portfolio</a><a class="btn" href="index.html#contact">Let’s connect</a></div><div class="st4" style="margin-top:34px"><a href="#resources"><span>I need a template</span><b>Download a ready-to-use file</b><em>Competency map, L&amp;D calendar, onboarding plan.</em><i>→</i></a><a href="#studio"><span>I need a tool</span><b>Build and download</b><em>A competency matrix and a programme blueprint.</em><i>→</i></a><a href="#ai"><span>I want to use AI</span><b>Copy a starter prompt</b><em>Ten prompts, with checks and cautions.</em><i>→</i></a><a href="#intern"><span>I am starting my career</span><b>Practise with real projects</b><em>Project ideas and a decision simulator.</em><i>→</i></a></div></div></header>
 
 <section id="tip" class="tipband"><div class="wrap">
 <div class="tipgrid">
@@ -428,26 +459,13 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 <p class="pug-hint">Tap my photo to hear your tip 🎧</p>
 </div>
 <div class="tc">
-<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span></div>
+<div class="tm"><span id="tdate"></span><span class="tt" id="ttheme"></span><span class="tt st" id="tstreak" hidden></span></div>
 <p class="tx" id="ttext" aria-live="polite"></p>
 <div class="ta"><button class="btn" id="tprev" type="button">Previous day</button><button class="btn" id="ttoday" type="button">Today</button><button class="btn" id="tnext" type="button">Next day</button><button class="btn p" id="tcopy" type="button">Copy tip</button></div>
 </div>
 </div>
 </div></section>
 
-
-<section id="insights"><div class="wrap">
-<h2 class="h2">Notes from the field.</h2>
-<p class="sub">Short, practical notes on capability building, learning ROI, talent and HR transformation.</p>
-<div class="pjl">
-<div class="pj st"><button type="button" aria-expanded="false"><span>Why training alone cannot transform an organisation</span><span class="mt"><i class="ar">The Capability Builder</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">A workshop can build awareness, but it rarely changes results on its own. What decides whether learning sticks is everything around it: clear expectations from the manager, time to practise, tools that support the new way of working, and a measure people care about. Before designing any programme, I ask what should be different in the business in three months, and what else besides training must change to make that happen. Often the answer includes a job aid, a process fix or a better conversation between a manager and their team.</p></div></div></div>
-<div class="pj st"><button type="button" aria-expanded="false"><span>Five lessons from building learning functions</span><span class="mt"><i class="ar">Lessons from 19 Years</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">First, start from a business problem, not a course catalogue. Second, win one senior sponsor early. Third, pilot small and fix quickly. Fourth, make managers your partners, because they decide whether learning is used. Fifth, measure something simple and report it every quarter. In my experience a learning function earns trust when people see a result they care about, not when the training calendar gets longer.</p></div></div></div>
-<div class="pj st"><button type="button" aria-expanded="false"><span>Measuring the real ROI of training</span><span class="mt"><i class="ar">The L&amp;D Strategist</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Start with a baseline before the programme begins and pick one business measure, such as errors, time to competence or sales per person. Estimate benefits conservatively and count only what training itself caused. Compare them with the full cost, including people’s time. ROI is net benefit divided by cost. If money is hard to measure, track behaviour change after 30 to 60 days and ask managers what they see. You can try the <a href="#play">calculator on this page</a> with your own numbers.</p></div></div></div>
-<div class="pj st"><button type="button" aria-expanded="false"><span>Developing talent for an AI-enabled workplace</span><span class="mt"><i class="ar">Future-Ready Workforce</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">AI will change tasks faster than it changes job titles. Build three things: AI literacy for everyone, including safe use and checking output; stronger human skills such as judgement, communication and learning agility; and learning that happens in the flow of work, with short modules and job aids. Map which tasks in each role are likely to change, then plan reskilling and internal mobility around those tasks. Start with one team and learn from it.</p></div></div></div>
-<div class="pj st"><button type="button" aria-expanded="false"><span>Build talent pipelines, not just fill vacancies</span><span class="mt"><i class="ar">HR Beyond Recruitment</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Filling a vacancy solves today’s problem. A pipeline solves next year’s. Define what success looks like in each critical role, use structured interviews so every candidate is assessed on the same things, and design onboarding as a 30-60-90 day journey. Then connect hiring to development through mentoring, stretch assignments and succession plans. The best test of a recruitment process is how well people perform and grow six months after they join.</p></div></div></div>
-<div class="pj st"><button type="button" aria-expanded="false"><span>Your first L&amp;D project: where to start</span><span class="mt"><i class="ar">Freshers’ Corner</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Pick a small, real problem, such as helping new joiners find answers faster. Talk to five people who face it. Build the simplest thing that could help, like a one-page guide or a five-minute video. Test it with a few users, improve it, then measure what changed. Finish with a one-page story: the problem, what you built and the result. Browse the <a href="#intern">project ideas for freshers</a> for inspiration, and use AI to draft, never to decide.</p></div></div></div>
-</div>
-</div></section>
 
 <section id="resources" class="alt"><div class="wrap">
 <h2 class="h2">HR &amp; L&amp;D resource centre.</h2>
@@ -461,19 +479,70 @@ footer{border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mute);fo
 </div>
 </div></section>
 
+<section id="studio"><div class="wrap">
+<h2 class="h2">Interactive Studio.</h2>
+<p class="sub">Build something useful, then download it. No sign-up needed. Treat the outputs as editable starting points.</p>
+<div class="tool"><h3>Competency framework builder</h3><p class="tp">Choose a role and its competencies, set the proficiency level each one needs, and download a matrix you can edit.</p>
+<label class="lb" for="cf-role">Role</label><input id="cf-role" type="text" placeholder="For example: Plant HR Manager">
+<div class="tgrid" id="cf-pick" style="margin-top:14px"></div>
+<div id="cf-out"></div>
+<div class="ta"><button class="btn p" id="cf-dl" type="button" disabled>Download matrix (CSV)</button></div></div>
+<div class="tool"><h3>Build-a-programme workshop</h3><p class="tp">Work through the eight steps of a learning programme and generate a one-page blueprint to copy or download.</p>
+<div class="tgrid"><div><label class="lb" for="pb-aud">1. Target audience</label><input id="pb-aud" type="text" placeholder="For example: 50 graduate engineer trainees"></div><div><label class="lb" for="pb-cap">3. Capability needed</label><input id="pb-cap" type="text" placeholder="For example: safe, confident site supervision"></div></div>
+<label class="lb" for="pb-prob">2. Business problem</label><textarea id="pb-prob" placeholder="What is not working, and why does it matter?"></textarea>
+<label class="lb" for="pb-obj">4. Learning objectives (start each with an action verb)</label><textarea id="pb-obj" placeholder="For example: Run a safe toolbox talk. Explain the escalation steps."></textarea>
+<label class="lb">5. Learning interventions</label><div class="chk" id="pb-int"></div>
+<label class="lb">6. Assessment</label><div class="chk" id="pb-ass"></div>
+<label class="lb">7. Reinforcement</label><div class="chk" id="pb-rei"></div>
+<label class="lb">8. Success measures</label><div class="chk" id="pb-mea"></div>
+<label class="lb" for="pb-bm">Business measure to track (optional)</label><input id="pb-bm" type="text" placeholder="For example: first-year attrition, safety incidents">
+<div class="ta"><button class="btn p" id="pb-go" type="button">Generate blueprint</button></div>
+<div class="bp" id="pb-out" aria-live="polite" style="display:none"></div>
+<div class="ta" id="pb-act" hidden><button class="btn" id="pb-cp" type="button">Copy blueprint</button><button class="btn" id="pb-dl" type="button">Download (text)</button></div></div>
+</div></section>
+
+<section id="ai" class="alt"><div class="wrap">
+<h2 class="h2">AI for HR and L&amp;D.</h2>
+<p class="sub">Starter prompts you can copy and adapt, each with a check for the output.</p>
+<div class="warn"><b>Before you use any prompt:</b> never paste confidential or identifiable employee data, such as appraisals, survey comments with names or personal records, into an unapproved AI tool. Anonymise first, use your organisation’s approved tool, and have a subject-matter expert check the result.</div>
+<div class="tabs" id="ai-tabs"></div>
+<div class="ai" id="ai-list"></div>
+</div></section>
+
+<section id="reference"><div class="wrap">
+<h2 class="h2">HR and L&amp;D metrics dictionary.</h2>
+<p class="sub">Plain-language definitions, with a formula, an example, and what each metric can and cannot tell you.</p>
+<input id="md-q" type="search" placeholder="Search metrics" aria-label="Search metrics">
+<div class="pjl" id="md-list"></div>
+</div></section>
+
+<section id="play" class="play"><div class="wrap">
+<h2 class="h2">Practise and reflect.</h2>
+<p class="sub">Make decisions in realistic situations, take a short quiz, or reflect on your own learning function.</p>
+<div class="pg"><div class="pn2 wide"><span class="kk">Decision practice</span><h3>HR and L&amp;D scenario simulator</h3><div id="sc"></div></div>
+<div class="pn2"><span class="kk">Quick quiz</span><h3>Which L&amp;D superpower are you?</h3><div class="qz" id="qz"></div></div>
+<div class="pn2" id="maturity"><span class="kk">Self-assessment</span><h3>How mature is your L&amp;D function?</h3><p class="rn2">A tool for reflection, not a validated benchmark: ten self-reported questions and a score out of 40.</p><div id="mq2"></div></div></div>
+</div></section>
+
+<section id="insights" class="alt"><div class="wrap">
+<h2 class="h2">Notes from the field.</h2>
+<p class="sub">Short, practical notes on capability building, learning ROI, talent and HR transformation.</p>
+<div class="pjl">
+<div class="pj st"><button type="button" aria-expanded="false"><span>Why training alone cannot transform an organisation</span><span class="mt"><i class="ar">The Capability Builder</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">A workshop can build awareness, but it rarely changes results on its own. What decides whether learning sticks is everything around it: clear expectations from the manager, time to practise, tools that support the new way of working, and a measure people care about. Before designing any programme, I ask what should be different in the business in three months, and what else besides training must change to make that happen. Often the answer includes a job aid, a process fix or a better conversation between a manager and their team.</p></div></div></div>
+<div class="pj st"><button type="button" aria-expanded="false"><span>Five lessons from building learning functions</span><span class="mt"><i class="ar">Lessons from 19 Years</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">First, start from a business problem, not a course catalogue. Second, win one senior sponsor early. Third, pilot small and fix quickly. Fourth, make managers your partners, because they decide whether learning is used. Fifth, measure something simple and report it every quarter. In my experience a learning function earns trust when people see a result they care about, not when the training calendar gets longer.</p></div></div></div>
+<div class="pj st"><button type="button" aria-expanded="false"><span>Measuring the real ROI of training</span><span class="mt"><i class="ar">The L&amp;D Strategist</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Start with a baseline before the programme begins and pick one business measure, such as errors, time to competence or sales per person. Estimate benefits conservatively and count only what training itself caused. Compare them with the full cost, including people’s time. ROI is net benefit divided by cost. If money is hard to measure, track behaviour change after 30 to 60 days and ask managers what they see. You can try the <a href="#play">calculator on this page</a> with your own numbers.</p></div></div></div>
+<div class="pj st"><button type="button" aria-expanded="false"><span>Developing talent for an AI-enabled workplace</span><span class="mt"><i class="ar">Future-Ready Workforce</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">AI will change tasks faster than it changes job titles. Build three things: AI literacy for everyone, including safe use and checking output; stronger human skills such as judgement, communication and learning agility; and learning that happens in the flow of work, with short modules and job aids. Map which tasks in each role are likely to change, then plan reskilling and internal mobility around those tasks. Start with one team and learn from it.</p></div></div></div>
+<div class="pj st"><button type="button" aria-expanded="false"><span>Build talent pipelines, not just fill vacancies</span><span class="mt"><i class="ar">HR Beyond Recruitment</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Filling a vacancy solves today’s problem. A pipeline solves next year’s. Define what success looks like in each critical role, use structured interviews so every candidate is assessed on the same things, and design onboarding as a 30-60-90 day journey. Then connect hiring to development through mentoring, stretch assignments and succession plans. The best test of a recruitment process is how well people perform and grow six months after they join.</p></div></div></div>
+<div class="pj st"><button type="button" aria-expanded="false"><span>Your first L&amp;D project: where to start</span><span class="mt"><i class="ar">Freshers’ Corner</i><i>1 min read</i></span></button><div class="pn"><div><p class="art">Pick a small, real problem, such as helping new joiners find answers faster. Talk to five people who face it. Build the simplest thing that could help, like a one-page guide or a five-minute video. Test it with a few users, improve it, then measure what changed. Finish with a one-page story: the problem, what you built and the result. Browse the <a href="#intern">project ideas for freshers</a> for inspiration, and use AI to draft, never to decide.</p></div></div></div>
+</div>
+</div></section>
+
 <section id="lib"><div class="wrap">
 <h2 class="h2">A library of programs I’ve built.</h2>
 <p class="sub">Participant manuals, facilitator guides, e-learning modules and microlearning.</p>
 <div class="tabs" id="ltabs"></div>
 <div class="lib" id="libg"></div>
 <p style="margin-top:24px"><button class="btn" id="lmore" type="button">Show all programmes</button></p>
-</div></section>
-
-<section id="play" class="play"><div class="wrap">
-<h2 class="h2">Just for fun, and for reflection.</h2>
-<p class="sub">A short quiz, and a ten-question self-assessment for your learning function.</p>
-<div class="pg"><div class="pn2"><span class="kk">Quick quiz</span><h3>Which L&amp;D superpower are you?</h3><div class="qz" id="qz"></div></div>
-<div class="pn2" id="maturity"><span class="kk">Self-assessment</span><h3>How mature is your L&amp;D function?</h3><p class="rn2">A tool for reflection, not a validated benchmark: ten self-reported questions and a score out of 40.</p><div id="mq2"></div></div></div>
 </div></section>
 
 <section id="intern" class="alt"><div class="wrap">
@@ -629,6 +698,85 @@ var b2=mk("button","btn","Take it again");b2.type="button";b2.onclick=function()
 $("rdl").onclick=function(){var cur=($("rcur").value||"").trim()||"none",rows=[["Currency",cur],["Participants",$("r1").value],["Hours per person",$("r2").value],["Total programme cost",$("r3").value],["Benefit per person (estimate)",$("r4").value],["Share of benefit caused by training (%)",$("r5").value],["ROI",$("o1").textContent],["Net benefit",$("o2").textContent],["Benefit-cost ratio",$("o3").textContent],["Cost per learner-hour",$("o4").textContent]],t="Measure,Value\n"+rows.map(function(r){return r[0]+","+String(r[1]).replace(/,/g,"")}).join("\n")+"\nNote,ROI = (benefits - costs) / costs x 100. Benefits are estimates; count only the share caused by training.\n",bl=new Blob([t],{type:"text/csv"}),u=URL.createObjectURL(bl),a=document.createElement("a");a.href=u;a.download="training-roi-result.csv";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},500)};
 document.querySelectorAll(".mm a").forEach(function(a){a.addEventListener("click",function(){a.closest("details").open=false})});
 document.addEventListener("click",function(e){var d=document.querySelector(".more");if(d&&d.open&&!d.contains(e.target))d.open=false});
+(function(){try{var d=new Date(),k=function(x){return x.getFullYear()+"-"+(x.getMonth()+1)+"-"+x.getDate()},t=k(d),y=new Date(d.getTime()-864e5),st=JSON.parse(localStorage.getItem("ldstreak")||"{}");
+if(st.last!==t){st.n=(st.last===k(y)?(st.n||0)+1:1);st.last=t;localStorage.setItem("ldstreak",JSON.stringify(st))}
+var e=$("tstreak");e.textContent=st.n>1?"🔥 Day "+st.n+" learning streak":"🔥 Streak started. Come back tomorrow!";e.title="Visit on consecutive days to grow your streak";e.hidden=false}catch(x){}})();
+var T=["SABA","Zobble","Disprz","Enthrall","CSOD","Coursera","Adobe Captivate","SCORM","DiSC","Storyboarding","ATS","PMS"];$("mq").innerHTML=T.concat(T).map(function(t){return"<span>"+t+"</span>"}).join("");
+/* knowledge hub tools */
+(function(){
+function dl(name,text){var bl=new Blob([text],{type:"text/plain"}),u=URL.createObjectURL(bl),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},500)}
+function cp(t,btn){if(navigator.clipboard){navigator.clipboard.writeText(t);var o=btn.textContent;btn.textContent="Copied";setTimeout(function(){btn.textContent=o},1500)}}
+/* ---- competency framework builder ---- */
+var CL={"Technical and functional":[["Process knowledge","Understands and applies the core processes of the role."],["Problem solving","Finds root causes and chooses sound solutions."],["Quality and safety focus","Works to standards and protects people and quality."],["Digital fluency","Uses digital tools and data to work better."]],
+"Behavioural":[["Communication","Gets ideas across clearly and listens well."],["Collaboration","Works across teams to reach shared goals."],["Adaptability","Adjusts quickly to change and uncertainty."],["Ownership","Takes responsibility for results."],["Customer focus","Understands and serves internal and external customers."]],
+"Leadership":[["Coaching and developing others","Grows people through feedback and stretch."],["Decision making","Makes timely, well-reasoned decisions."],["Strategic thinking","Links daily work to long-term direction."],["Influencing stakeholders","Builds support across senior and peer groups."],["Leading change","Guides teams through transitions."]],
+"HR and L&D":[["Learning needs analysis","Finds real capability gaps from data and conversations."],["Instructional design","Designs learning that people can apply."],["Facilitation","Runs engaging sessions that change behaviour."],["Measurement and analytics","Measures learning and reports business value."],["Stakeholder partnering","Works with business leaders on priorities."]]},
+LV=["Awareness: understands the basics and needs guidance","Working: applies the skill in routine situations with some support","Proficient: applies it independently and helps others","Expert: sets the standard and develops others"],
+AM={"Technical and functional":"Practical assessment or SME observation","Behavioural":"Structured interview and 360 feedback","Leadership":"Assessment centre or leadership case discussion","HR and L&D":"Work sample and portfolio review"},sel=[];
+function cfr(){var o=$("cf-out");if(!sel.length){o.innerHTML="<p class='tp'>Pick at least one competency to see your matrix.</p>";$("cf-dl").disabled=true;return}
+var h="<div class='mxw'><table class='mx'><thead><tr><th>Competency</th><th>Category</th><th>Required level</th><th>What it looks like</th><th>Suggested assessment</th></tr></thead><tbody>";
+sel.forEach(function(x,i){h+="<tr><td><b>"+x.n+"</b><br><small>"+x.d+"</small></td><td>"+x.cat+"</td><td><select data-i='"+i+"' aria-label='Required level for "+x.n+"'>"+[1,2,3,4].map(function(v){return"<option value='"+v+"'"+(v===x.lv?" selected":"")+">"+v+"</option>"}).join("")+"</select></td><td>"+LV[x.lv-1]+"</td><td>"+AM[x.cat]+"</td></tr>"});
+o.innerHTML=h+"</tbody></table></div>";$("cf-dl").disabled=false;
+o.querySelectorAll("select").forEach(function(s){s.onchange=function(){sel[+s.dataset.i].lv=+s.value;cfr()}})}
+var cfp=$("cf-pick");
+Object.keys(CL).forEach(function(cat){var d=mk("div","","<p class='cgh'>"+cat+"</p>"),w=mk("div","chk");CL[cat].forEach(function(c){var l=mk("label","chip2","<input type='checkbox' value='"+c[0]+"'><span>"+c[0]+"</span>");l.title=c[1];l.querySelector("input").onchange=function(e){var n=c[0];if(e.target.checked)sel.push({n:n,cat:cat,d:c[1],lv:2});else sel=sel.filter(function(x){return x.n!==n});cfr()};w.appendChild(l)});d.appendChild(w);cfp.appendChild(d)});
+cfr();
+$("cf-dl").onclick=function(){var role=$("cf-role").value||"Role",csv="Role,Competency,Category,Required level,What it looks like,Suggested assessment\n"+sel.map(function(x){return [role,x.n,x.cat,x.lv,LV[x.lv-1],AM[x.cat]].map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(",")}).join("\n")+"\n";dl("competency-matrix.csv",csv)};
+/* ---- build-a-programme workshop ---- */
+var PO={int:["Workshop","Microlearning","e-Learning","Coaching or mentoring","On-the-job assignment","Peer learning circle","Job aids","Simulation or role-play"],ass:["Pre and post test","Observation checklist","Scenario assessment","Manager rating","Project presentation"],rei:["Manager check-ins at 30 days","Spaced quiz nudges","Peer practice groups","Refreshed job aids","Follow-up session"],mea:["Completion rate","Assessment improvement","Behaviour change at 30 to 60 days","A named business measure"]};
+Object.keys(PO).forEach(function(k){var w=$("pb-"+k);PO[k].forEach(function(t){w.appendChild(mk("label","chip2","<input type='checkbox' value='"+t+"'><span>"+t+"</span>"))})});
+function chosen(k){return [].slice.call($("pb-"+k).querySelectorAll("input:checked")).map(function(i){return i.value})}
+var bp="";
+$("pb-go").onclick=function(){var v=function(i){return ($(i).value||"").trim()||"(to be defined)"},L=function(a){return a.length?a.join("; "):"(to be chosen)"},bm=($("pb-bm").value||"").trim();
+bp="PROGRAMME BLUEPRINT\n\n1. Audience: "+v("pb-aud")+"\n2. Business problem: "+v("pb-prob")+"\n3. Capability needed: "+v("pb-cap")+"\n4. Learning objectives: "+v("pb-obj")+"\n5. Learning interventions: "+L(chosen("int"))+"\n6. Assessment: "+L(chosen("ass"))+"\n7. Reinforcement: "+L(chosen("rei"))+"\n8. Success measures: "+L(chosen("mea"))+(bm?"\n   Business measure: "+bm:"")+"\n\nSUGGESTED SEQUENCE\nBefore: set a baseline and run a pre-assessment\nLearn: "+L(chosen("int"))+"\nPractice: apply on the job with manager support\nCheck: post-assessment and observation\nReinforce: "+L(chosen("rei"))+"\nEvaluate: review the measures after 30 to 60 days and report to the sponsor\n";
+$("pb-out").textContent=bp;$("pb-out").style.display="block";$("pb-act").hidden=false};
+$("pb-cp").onclick=function(){cp(bp,$("pb-cp"))};$("pb-dl").onclick=function(){dl("programme-blueprint.txt",bp)};
+/* ---- AI prompt library ---- */
+var AP=[
+{c:"Learning needs",t:"Analyse anonymised training feedback",w:"Groups comments into themes and points to the learning needs behind them.",who:"L&D managers and analysts",need:"Anonymised feedback from one programme.",p:"You are an L&D analyst. Below is anonymised feedback from [number] participants of [programme]. Group the comments into themes, show how often each theme appears, and list three learning needs that follow. Separate facts from assumptions.\n\nFeedback:\n[paste anonymised text]",v:"Spot-check ten comments against the themes and recount the top two themes yourself."},
+{c:"Instructional design",t:"Turn an SOP into microlearning",w:"Breaks a procedure into short modules with knowledge checks.",who:"Instructional designers and trainers",need:"The SOP text, with confidential details removed.",p:"Convert the SOP below into five microlearning modules of under five minutes each. For every module give: the objective, the key message, one workplace example and a three-question knowledge check. Stay within the SOP and do not add steps.\n\nSOP:\n[paste SOP]",v:"Have a subject-matter expert confirm every step, number and safety point."},
+{c:"Facilitation",t:"Draft a workshop facilitator guide",w:"Creates a timed plan with activities, questions and materials.",who:"Trainers and facilitators",need:"Topic, audience, duration and the outcome you want.",p:"Create a facilitator guide for a [duration] workshop on [topic] for [audience]. Include timings, activities, discussion questions, materials needed and a closing action commitment for each participant. The aim is that participants can [outcome].",v:"Run the timings against your real room and group size, and cut anything that does not serve the outcome."},
+{c:"Leadership",t:"Build a difficult-conversation role-play",w:"Produces briefs for both roles, an observer checklist and debrief questions.",who:"Leadership programme designers",need:"The situation, such as feedback on missed deadlines.",p:"Write a role-play for a manager giving feedback about [issue]. Provide a brief for the manager, a brief for the employee that includes their view and feelings, an observer checklist and three debrief questions.",v:"Test the role-play with two colleagues and adjust anything that feels unrealistic or one-sided."},
+{c:"Talent",t:"Create a structured interview guide",w:"Builds behavioural questions and a scoring rubric for each competency.",who:"Recruiters and hiring managers",need:"The role and three to five competencies.",p:"Create a structured interview guide for [role] that assesses [competencies]. For each competency give two behavioural questions, probing follow-ups and a 1 to 4 scoring rubric with observable behaviours.",v:"Check that every question relates to the job, and remove anything that could discriminate."},
+{c:"Organisation development",t:"Find themes in engagement comments",w:"Summarises open-text survey comments and suggests manager actions.",who:"OD and HR business partners",need:"Anonymised comments from a large enough group to protect identity.",p:"From the anonymised survey comments below, identify five themes with short sample quotes that contain no names. For each theme suggest two actions a manager could take within 30 days.\n\nComments:\n[paste anonymised comments]",v:"Read a sample of the raw comments yourself, and never report themes from groups so small that someone could be identified."},
+{c:"Performance",t:"Rewrite vague goals as measurable objectives",w:"Turns general goals into SMART development objectives.",who:"Managers and HR partners",need:"The current goals, without personal details.",p:"Rewrite the goals below as SMART development objectives with a measure and a date for each. Keep the original intent.\n\nGoals:\n[paste goals]",v:"Confirm with the employee and manager that each measure is realistic and within their control."},
+{c:"Learning technology",t:"Propose a learning catalogue taxonomy",w:"Suggests categories, tags and naming rules for an LMS catalogue.",who:"LMS administrators",need:"Organisation type, number of courses and main audiences.",p:"Propose a learning catalogue taxonomy for a [type of organisation] with about [number] courses. Give the categories and sub-categories, tags for role, skill and level, and naming rules for courses.",v:"Test the structure by asking five employees to find three courses, and adjust where they struggle."},
+{c:"Analytics",t:"Explain dashboard trends to a leader",w:"Turns monthly numbers into a plain-language summary and follow-up questions.",who:"L&D analysts",need:"Summary figures only, with no personal data.",p:"Here is a monthly L&D dashboard summary with numbers only: [data]. Explain three trends in plain language for a business leader, and list two questions I should investigate before presenting.",v:"Recalculate each figure the summary mentions and confirm the explanation fits your context."},
+{c:"Communication",t:"Plan a learning launch campaign",w:"Drafts a four-week communication plan with messages and a manager briefing.",who:"L&D and internal communications",need:"The programme or platform, audience and launch date.",p:"Draft a four-week communication plan to launch [programme or platform] for [audience]. Include key messages, channels, sample short messages and a one-page briefing note for managers.",v:"Adapt the tone to your culture, and check that dates, links and claims are accurate before sending."}],
+ac="All";
+var ACa=["All"].concat(AP.map(function(x){return x.c}).filter(function(c,i,a){return a.indexOf(c)===i}));
+function air(){var l=$("ai-list");l.innerHTML="";AP.filter(function(x){return ac==="All"||x.c===ac}).forEach(function(x){var d=mk("div","ac","<span class='kk'>"+x.c+"</span><h3>"+x.t+"</h3><p><b>What it does:</b> "+x.w+"</p><p><b>Who it suits:</b> "+x.who+"</p><p><b>You provide:</b> "+x.need+"</p><pre class='pr'></pre><div class='cb'></div><p><b>How to check the output:</b> "+x.v+"</p>");d.querySelector("pre").textContent=x.p;var b=mk("button","btn","Copy prompt");b.type="button";b.onclick=function(){cp(x.p,b)};d.querySelector(".cb").appendChild(b);l.appendChild(d)})}
+ACa.forEach(function(c){var b=mk("button","tab",c);b.setAttribute("aria-pressed",c==="All");b.onclick=function(){ac=c;document.querySelectorAll("#ai-tabs .tab").forEach(function(x){x.setAttribute("aria-pressed","false")});b.setAttribute("aria-pressed","true");air()};$("ai-tabs").appendChild(b)});air();
+/* ---- metrics dictionary ---- */
+var MD=[["Training completion rate","Learning","The share of enrolled learners who finish a programme.","(Learners who completed ÷ learners enrolled) × 100","180 of 200 learners completed, so 90%.","Whether people finish what they start.","Whether they learned anything or applied it.","Treating a high completion rate as proof of impact."],
+["Learning hours per employee","Learning","The average amount of learning each employee completes in a period.","Total participant learning hours ÷ average headcount","42,000 hours ÷ 2,000 employees = 21 hours each.","How much learning time the organisation is investing.","The quality or relevance of that learning.","Adding low-value hours to reach a target."],
+["Cost per learner","Learning","What a programme costs for each person who takes part.","Total programme cost ÷ number of learners","₹150,000 ÷ 50 learners = ₹3,000.","How efficiently money is being spent.","Whether the spend created value.","Choosing the cheapest option regardless of outcomes."],
+["Cost per learner-hour","Learning","The cost of each hour of learning, so different formats can be compared.","Total cost ÷ (learners × hours per learner)","₹150,000 ÷ (50 × 8) = ₹375 per hour.","The relative cost of classroom, online and blended formats.","How effective each format is.","Leaving out participants’ time from the cost."],
+["Time to productivity","Talent","The days a new joiner takes to reach an agreed performance standard.","Date standard reached − joining date","New engineers now reach standard in 120 days, down from 150.","Whether onboarding and early learning are working.","Why the time changed.","Not defining what productive means before measuring."],
+["Internal mobility rate","Talent","The share of roles filled by moves or promotions from within.","(Internal moves and promotions ÷ average headcount) × 100","40 moves ÷ 800 employees = 5%.","Career opportunity and the flow of talent.","Whether the moves were good matches.","Counting transfers and promotions as the same thing."],
+["Employee turnover rate","Talent","The share of employees who leave in a period.","(Leavers in the period ÷ average headcount) × 100","60 leavers ÷ 600 employees = 10%.","How stable the workforce is.","Who is leaving, or why.","Mixing voluntary and involuntary exits."],
+["Regrettable attrition","Talent","Exits of people the organisation did not want to lose.","(Regrettable exits ÷ average headcount) × 100","8 regrettable exits ÷ 400 employees = 2%.","Whether valuable talent is being lost.","The reasons people left.","Using a vague or inconsistent definition of regrettable."],
+["Critical-role succession coverage","Talent","The share of critical roles that have a ready successor.","(Critical roles with a ready-now or ready-soon successor ÷ total critical roles) × 100","14 of 20 critical roles covered = 70%.","How exposed the organisation is to leadership gaps.","How good the successors are.","Naming successors without development plans."],
+["Learner adoption rate","Learning technology","The share of eligible employees who actively use the learning platform.","(Active learners in the period ÷ eligible employees) × 100","1,500 active of 2,000 eligible = 75%.","How far the platform reaches.","Whether learning is useful.","Counting a single login as active use."],
+["Training effectiveness","Evaluation","Whether a programme changed what people know, do and deliver.","No single formula. Track four levels: reaction, learning (pre and post), behaviour at 30 to 60 days, and a business result.","A sales programme shows higher test scores, better manager ratings after 60 days and a rise in conversion.","Whether the programme worked at several levels.","Whether training alone caused the business result.","Measuring only satisfaction."],
+["Return on investment (ROI)","Evaluation","The estimated financial return from a programme compared with its cost.","((Benefits − costs) ÷ costs) × 100","Benefits of ₹210,000 and costs of ₹150,000 give 40%.","The estimated return on the money spent.","How much of the benefit training itself caused.","Counting every improvement as the result of training."],
+["Employee Net Promoter Score (eNPS)","Engagement","How likely employees are to recommend the organisation as a place to work.","% promoters − % detractors","45% promoters − 15% detractors = +30.","The level of advocacy and loyalty.","The reasons behind the score.","Ignoring the response rate."]];
+function mdr(){var q=($("md-q").value||"").toLowerCase(),l=$("md-list");l.innerHTML="";MD.filter(function(m){return !q||(m[0]+" "+m[2]+" "+m[1]).toLowerCase().indexOf(q)>-1}).forEach(function(m){var d=mk("div","pj","<button type='button' aria-expanded='false'><span>"+m[0]+"</span><span class='mt'><i class='ar'>"+m[1]+"</i></span></button><div class='pn'><div><dl><div><dt>Definition</dt><dd>"+m[2]+"</dd></div><div><dt>Formula</dt><dd>"+m[3]+"</dd></div><div><dt>Example</dt><dd>"+m[4]+"</dd></div><div><dt>What it tells you</dt><dd>"+m[5]+"</dd></div><div><dt>What it does not tell you</dt><dd>"+m[6]+"</dd></div><div><dt>Common mistake</dt><dd>"+m[7]+"</dd></div></dl></div></div>");var bt=d.firstChild;bt.onclick=function(){var o=d.classList.toggle("open");bt.setAttribute("aria-expanded",o)};l.appendChild(d)});if(!l.firstChild)l.innerHTML="<p class='tp'>No metric matches that search.</p>"}
+$("md-q").addEventListener("input",mdr);mdr();
+/* ---- scenario simulator ---- */
+var SC=[
+{t:"A business head says training is a waste of money",s:"A senior leader tells you in a meeting that the training budget should be cut because nothing changes after programmes.",o:[["Defend the budget with attendance figures.","Attendance shows activity, not results. It does not answer his real concern, so it can sound defensive."],["Ask which business problem matters most to him, and offer a small pilot with an agreed measure.","This turns a complaint into a shared problem, and creates evidence in his own language."],["Offer to cut the budget by half to show goodwill.","This avoids the question and weakens your credibility. The concern about results is still unanswered."]],best:1,plan:"Meet him, learn one business problem he cares about, agree a measure, run a focused pilot, and report the result in business terms."},
+{t:"Employees finish courses but performance does not improve",s:"Completion rates are high, yet managers say they see no change in how work is done.",o:[["Add more courses on the same topics.","More content rarely fixes a gap that is not about knowledge."],["Check whether the gap is skill, motivation, tools or manager support, and how managers reinforce learning.","Learning only transfers when the environment supports it, so diagnosing the cause comes first."],["Replace the training vendor.","The vendor may not be the issue. Without a diagnosis you may repeat the same result."]],best:1,plan:"Interview a few managers and employees, observe the work, find the real barrier, and add reinforcement such as manager check-ins and job aids."},
+{t:"A manager refuses to release people for training",s:"A plant manager says production targets mean nobody can attend a two-day programme.",o:[["Escalate to the CEO straight away.","Escalating early damages the relationship and can make the manager defensive."],["Skip that team and train the willing ones.","The team that needs the capability most stays untouched."],["Understand the workload pressure, offer shorter formats scheduled around peaks, and link the training to the manager’s own goals.","This respects the constraint and shows how the training helps the manager succeed."]],best:2,plan:"Agree a schedule that protects output, break the programme into shorter sessions, and show the manager the result it supports."},
+{t:"Graduate trainees are leaving within a year",s:"Attrition among graduate engineer trainees is high, and the business wants a quick fix.",o:[["Raise the stipend and stop there.","Pay may matter, but it ignores other reasons people leave."],["Run stay and exit interviews, then review induction, mentoring and role clarity.","This finds the real causes before choosing an intervention."],["Introduce a bond to stop people leaving.","A bond may delay exits, but it does not address why people want to leave."]],best:1,plan:"Collect evidence from leavers and stayers, fix the top two causes, strengthen mentoring and early projects, and track retention by batch."},
+{t:"The engagement survey shows low confidence in leadership",s:"Scores about senior leadership are the lowest in the survey, and managers are worried.",o:[["Share the headline scores and move on to other priorities.","Without action, people stop trusting the survey."],["Run a one-day workshop for all leaders and call it done.","One event rarely changes behaviour or trust."],["Share the results openly, hold listening sessions, agree three visible actions and track them.","Visible follow-through is what rebuilds trust and shows people they were heard."]],best:2,plan:"Share the findings, listen in small groups, pick three actions with owners and dates, and report progress every quarter."},
+{t:"A new LMS has launched, but few people use it",s:"Three months after launch, only a third of employees log in each month.",o:[["Send more reminder emails.","Reminders do not fix access, relevance or manager support problems."],["Make every course mandatory.","Compulsion can raise logins while lowering motivation."],["Find the barriers, fix the top two, and use local champions to model usage.","Understanding the barrier first, then fixing it, is what lifts real adoption."]],best:2,plan:"Survey and interview users, fix access and content relevance, brief managers, appoint champions in each location and review adoption monthly."}];
+function scr(i){var z=$("sc");z.innerHTML="";if(i===undefined){z.innerHTML="<span class='qm'>Pick a situation</span>";SC.forEach(function(s,k){var b=mk("button","qo",s.t);b.type="button";b.onclick=function(){scr(k)};z.appendChild(b)});return}
+var s=SC[i];z.innerHTML="<span class='qm'>Scenario "+(i+1)+" of "+SC.length+"</span><p class='qq'>"+s.t+"</p><p style='color:var(--mute)'>"+s.s+"</p><div id='sc-o'></div><div id='sc-f'></div>";
+s.o.forEach(function(o,k){var b=mk("button","qo",String.fromCharCode(65+k)+". "+o[0]);b.type="button";b.onclick=function(){[].slice.call($("sc-o").children).forEach(function(x,j){x.disabled=true;x.style.opacity=j===k?1:.6;if(j===s.best)x.style.borderColor="var(--g)"});$("sc-f").innerHTML="<div class='fb'><b>"+(k===s.best?"A strong choice. ":"Think again. ")+"</b>"+o[1]+"</div><div class='fb'><b>Suggested approach.</b> "+s.plan+"</div><div class='qa' style='margin-top:12px'></div>";var n=mk("button","btn p","Try another scenario");n.type="button";n.onclick=function(){scr()};$("sc-f").querySelector(".qa").appendChild(n)};$("sc-o").appendChild(b)})}
+scr();
+})();
+
 /* hero pug and scroll story */
 var sayFn=null;
 (function(){var hp=$("hpug"),hb=$("hbub"),hero=document.querySelector(".hero"),i=0,L=["Hello! Let’s explore my portfolio.","Click again for more L&D acronyms!","Learn. Develop. Grow.","Let’s talk capability building."];
